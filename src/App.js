@@ -2,6 +2,7 @@ import React from 'react';
 import Head from './components/Head'
 import LoginForm from './components/LoginForm'
 import Footer from './components/Footer'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 import './App.css';
 
@@ -15,9 +16,13 @@ class App extends React.Component {
 
   render() {
   return (
-    <div >
+    <BrowserRouter >
       <Head/>
-      <LoginForm />
+      <Switch >
+  <Route path="/login" render={(routerProps) => <LoginForm {...routerProps}/>}/>
+
+       
+      
 
 
 
@@ -40,10 +45,10 @@ class App extends React.Component {
 
 
 
-
+      </Switch>
 
       <Footer />
-    </div>
+    </BrowserRouter>
   );
 }
 }
