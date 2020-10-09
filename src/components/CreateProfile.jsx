@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
 
-const Signup = () => {
+const CreateProfile = () => {
     return ( <div>
 
 
 
-        
+
     </div> );
 }
  
-export default Signup;
+export default CreateProfile;

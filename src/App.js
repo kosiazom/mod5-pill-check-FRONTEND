@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 import './App.css';
+import CreateProfile from './components/CreateProfile';
 
 class App extends React.Component {
 
@@ -20,7 +21,8 @@ class App extends React.Component {
       <Head/>
       <Switch >
   <Route path="/login" render={(routerProps) => <LoginForm {...routerProps}/>}/>
-
+ 
+  <Route path="/create-user-profile" render={(routerProps) => <CreateProfile {...routerProps}/>}/>
        
       
 
