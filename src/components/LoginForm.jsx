@@ -22,7 +22,6 @@ class LoginForm extends Component {
                 password: e.target.value
             })
         }
-        
     }
 
 
