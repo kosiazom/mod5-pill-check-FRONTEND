@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Form, Button } from 'semantic-ui-react'
 
 
@@ -28,7 +28,7 @@ class LoginForm extends Component {
     render() { 
         return ( 
             <div>
-                <h3>Welcome to Pill Check!</h3>
+                <h3>Please Log in!</h3>
                 <Form>
                     <Form.Field>
                         <input name='username' placeholder="Username..." value={this.state.username} />
