@@ -82,7 +82,7 @@ class LoginForm extends Component {
                     <Button primary type="submit">Log In</Button>
                 </Form>
                 <br />
-                <Link to='/create-user-profile'>Not a user? Create an account!</Link>
+                <Link to='/create-user-profile'><p>Not a user? Create an account!</p></Link>
             </div>
          );
     }
