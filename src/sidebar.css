@@ -1,11 +1,11 @@
 .sidenav {
-    height: 100%;
+    
     width: 160x;
     position: fixed;
     z-index: 10;
     top: auto;
-    left: 0;
-    background-color: olive;
+    left: 10px;
+    background-color: whitesmoke;
     overflow-x: hidden;
     padding-top: 20px;
     border: 1px;

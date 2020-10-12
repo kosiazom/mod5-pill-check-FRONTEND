@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 import CreateProfile from './components/CreateProfile';
 import MainContainer from './components/MainContainer';
 import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom'
-import './App.css';
+
 
 
 class App extends React.Component {

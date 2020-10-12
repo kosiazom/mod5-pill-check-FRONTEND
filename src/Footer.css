@@ -1,0 +1,40 @@
+.footer {
+    border: 1px solid#DCDCDC;
+    box-shadow: 0 0 0 3px;
+    bottom: 0;
+    height: 10vh;
+    width: 100%;
+    background-color: olive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+  }
+
+  .center {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      justify-content: center;
+  }
+
+  .icons {
+      align-self: center;
+  }
+
+  .foot-tag{
+      color: black;
+  }
+
+  .foot-tag:hover {
+    color: whitesmoke;
+    cursor: pointer;
+  }
+
+  .linkedin.large.icon:hover {
+    color:whitesmoke;
+  }
+
+  .github.large.icon:hover {
+    color:whitesmoke;
+  }
