@@ -3,13 +3,10 @@ import { Menu } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 
-
-
-
-
-
 const NavBar = () => {
-
+ let logout = () => {
+     localStorage.clear()
+ }
     return(
         <>
         <Menu secondary>
@@ -21,7 +18,10 @@ const NavBar = () => {
         <Menu.Item position={'right'} >
         <Link to='/login'>Log In</Link>
         </Menu.Item >
-      
+
+        <Menu.Item position={'right'} onClick={logout}>
+        LogOut
+        </Menu.Item >
        
         </Menu>
 
