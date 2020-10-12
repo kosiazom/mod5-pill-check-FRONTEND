@@ -3,12 +3,13 @@ import Copd from './Copd'
 import Notes from './Notes'
 
 class UserHome extends Component {
+    
     render() {
         return (
-            <div>
+            <div className="userHome">
                
              {this.props.userView === "copd" && <Copd />}  
-             {this.props.userView === "home" && <Notes />} 
+             {this.props.userView === "notes" && <Notes />} 
             </div>
         );
     }

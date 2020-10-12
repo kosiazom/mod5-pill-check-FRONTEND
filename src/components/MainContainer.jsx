@@ -12,12 +12,9 @@ class MainContainer extends Component {
         userView: "home"
       }
 
-
       handleChange = (e) => {
-      console.log(e.target.value)
-       
-
-            this.setState({userView: e.target.value})
+      console.dir(e.target.name)
+            this.setState({userView: e.target.name})
         
       }
 
