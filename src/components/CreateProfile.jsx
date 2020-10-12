@@ -84,7 +84,8 @@ class CreateProfile extends Component {
         .then( userInfo => {
             localStorage.token = userInfo.token
             localStorage.username = userInfo.username
-           this.setState({currentUser: userInfo})
+            localStorage.userID = userInfo.id
+          
             console.log(userInfo)
         } )
     }
