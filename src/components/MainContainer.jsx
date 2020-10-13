@@ -12,13 +12,15 @@ import '../maincontainer.css'
 
 class MainContainer extends Component {
     state = {
-        userView: "home"
+        userView: "home",
+        notes: []
       }
+ 
+  
 
       handleChange = (e) => {
       console.dir(e.target.name)
             this.setState({userView: e.target.name})
-        
       }
 
       
