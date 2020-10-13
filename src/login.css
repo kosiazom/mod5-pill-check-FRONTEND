@@ -1,0 +1,15 @@
+
+.home-picture {
+    background-image: url("https://ak.picdn.net/shutterstock/videos/8025358/thumb/1.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    top: -15px;
+  }
+  
+  .footer {
+      position: relative;
+      top: -10px
+  }

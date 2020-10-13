@@ -28,6 +28,7 @@
   color: #61dafb;
 }
 
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +36,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.home-picture {
+  background-image: url("https://ak.picdn.net/shutterstock/videos/8025358/thumb/1.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  top: -15px;
 }

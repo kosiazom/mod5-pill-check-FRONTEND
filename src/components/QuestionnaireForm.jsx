@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Form} from 'semantic-ui-react'
 
-class Questionnaire extends Component {
+class QuestionnaireForm extends Component {
 
     state ={
         currentUser: localStorage.userID
@@ -33,4 +33,4 @@ class Questionnaire extends Component {
     }
 }
 
-export default Questionnaire;
+export default QuestionnaireForm;

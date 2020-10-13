@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Form, Button, Grid, Header, Image, Message, Segment, Icon} from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import Head from './Head'
+import Footer from './Footer'
+import '../login.css'
 
 const loginURL = "http://localhost:3000/api/v1/login"
 
@@ -71,10 +74,11 @@ class LoginForm extends Component {
     render() { 
         return ( 
             <div>
-
+            <Head />
+            <div className="home-picture">
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
             <Grid.Column style={{ maxWidth: 450 }}>
-            <Header as='h2' color='teal' textAlign='center'>
+            <Header as='h2' color='olive' textAlign='center'>
                 <Image src={require("../images/pillcheck-logo.png")}/> Log-in to your account
             </Header>
 
@@ -102,7 +106,7 @@ class LoginForm extends Component {
                     onChange={this.handleOnChange}
                 />
 
-                <Button color='teal' fluid size='large' onClick={this.handleClick}>
+                <Button color='olive' fluid size='large' onClick={this.handleClick}>
                     Login
                 </Button>
                 </Segment>
@@ -127,6 +131,10 @@ class LoginForm extends Component {
                 </Form>
                 <br />
                 <Link to='/create-user-profile'><p>Not a user? Create an account!</p></Link> */}
+                
+            </div>
+                <Footer />
+
             </div>
          );
     }
