@@ -4,16 +4,18 @@ import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
 
 
+const notesUrl = 'http://localhost:3000/api/v1/notes'
 
 const Notes = () => {
 
 const [date, setDate] = useState(new Date() )
-const [title, setTitle] =useState('')
-const [description, setDescription] = useState('')
+// const [title, setTitle] = useState("")
+const [description, setDescription] = useState("")
+// const [currentUser, setCurrentUser] = useState({})
 
-const handleChange = date => {
-    setDate(date)
-}
+// const handleChange = date => {
+//     setDate(date)
+// }
 
 // const today = new Date()
 // const  todayDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
@@ -22,30 +24,59 @@ const handleChange = date => {
 //  debugger
 // }
 
+const createNote = (e) => {
+    console.log(e.target.date.value)
+    e.preventDefault()
+
+    fetch(notesUrl, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+                user_id: localStorage.userID,
+                date: e.target.date.value,
+                description: e.target.description.value
+            
+        })
+    })
+    .then(res => res.json() )
+    .then( console.log )
+}
 
 
     return (
          <div>
-       <Form>
-         <Form.Field 
+       <Form onSubmit={createNote}>
+         {/* <Form.Field 
          control={Input}
          label="Date"
          name="date"
          value={date}
          type="text"
-         placeholder='10/12/2015'
          onchange={null}
-         />
+         /> */}
+        <div><h4>Select Date</h4></div>
+        <DatePicker
+        label="Today's Date"
+        selected={date} 
+        name="date"
+        onChange={(e) => setDate(e.target.value)}
+        value={date}
+        />
+        
 
-        <Form.Field 
+{/* 
+        <Form.Field
          control={Input}
          label="Title"
          name="title"
          type="text"
          value={title}
          placeholder='Title'
-         onchange={e => setTitle(e.target.value)}
-         /> 
+         onChange={e => setTitle(e.target.value)}
+         />  */}
 
         <Form.Field 
          control={TextArea}
@@ -54,7 +85,7 @@ const handleChange = date => {
          value={description}
          type="text"
          placeholder='What are you feeling...'
-         onchange={e => setDescription(e.target.value)}
+         onChange={e => setDescription(e.target.value)}
          />
          <Button type='submit'>Add My Note</Button>
 

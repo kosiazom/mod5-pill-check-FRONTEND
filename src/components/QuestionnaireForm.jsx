@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Form from 'react-bootstrap/Form'
+import {Button,Form } from 'semantic-ui-react'
 
 
 const diseaseUrl = 'http://localhost:3000/api/v1/disease_states'
@@ -35,10 +35,16 @@ class QuestionnaireForm extends Component {
         })
     }
 
+    handleRedirect = () =>{
+        this.props.history.push({
+            pathname:`/main-page`
+           })
+    }
+
     handleSubmitForm = (e) => {
         e.preventDefault()
 
-        console.log('tesint post')
+        console.log('tesing post')
             fetch(diseaseUrl, {
                 method: 'POST',
                 headers: {
@@ -68,24 +74,109 @@ class QuestionnaireForm extends Component {
         return (
             <div>
                 <h3>Disease State Form</h3>
-                <Form onSubmit={this.handleSubmitForm}>
-                    <div className="question-column">
-                    <label>Do you have COPD?</label>
+                <Form onSubmit={(e) => {
+                    this.handleSubmitForm()
+                    this.handleRedirect()}}>
+        
+            <div className="question-column">
+                        <label>Do you have COPD?</label>
+                        </div>
+
+                <div className="disease-radio">
+                    <label>Yes</label>
+                        <input 
+                        type="radio" 
+                        name="copd" 
+                        value="yes"
+                        checked={this.state.copd === 'yes'}
+                        onChange={this.handleChange}
+                        /><br/>
+                    
+                    <label>No</label>
+                        <input 
+                        type="radio" 
+                        name="copd" 
+                        value="no"
+                        checked={this.state.copd === 'no'}
+                        onChange={this.handleChange}
+                        />
                     </div>
 
-                 <label>Do you have COPD?</label>
-                 <input type="radio" name="copd" value="copd"></input>
+            <div className="question-column">
+                    <label>Do you have Hypertension?</label>
+                </div>
 
-                 <label>Do you have Hypertension?</label>
-                 <input type='radio' name="htn"></input>
+                    <div className="disease-radio">
+                        <label>Yes</label>
+                            <input 
+                            type="radio" 
+                            name="hypertension" 
+                            value="yes"
+                            checked={this.state.hypertension === 'yes'}
+                            onChange={this.handleChange}
+                            /><br/>
+                        
+                        <label>No</label>
+                            <input 
+                            type="radio" 
+                            name="hypertension" 
+                            value="no"
+                            checked={this.state.hypertension === 'no'}
+                            onChange={this.handleChange}
+                            />
+                        </div>
+            
+         <div className="question-column">
+                    <label>Do you have Hyperlipidemia (High Cholesterol)?</label>
+                </div>
 
-                 <label>Do you have Hyperlipidemia?</label>
-                 <input type='radio' name="hc"></input>
+                    <div className="disease-radio">
+                        <label>Yes</label>
+                            <input 
+                            type="radio" 
+                            name="hyperlipidemia" 
+                            value="yes"
+                            checked={this.state.hyperlipidemia === 'yes'}
+                            onChange={this.handleChange}
+                            /><br/>
+                        
+                        <label>No</label>
+                            <input 
+                            type="radio" 
+                            name="hyperlipidemia" 
+                            value="no"
+                            checked={this.state.hyperlipidemia === 'no'}
+                            onChange={this.handleChange}
+                            />
+                        </div>
 
-                 <label>Do you have Diabetes?</label>
-                 <input type='radio' name='diabetes'></input>
+          
+          
+        <div className="question-column">
+                    <label>Do you have Type 2 Diabetes?</label>
+                </div>
 
-                 <input type="submit" value="submit" />
+                    <div className="disease-radio">
+                        <label>Yes</label>
+                            <input 
+                            type="radio" 
+                            name="diabetes" 
+                            value="yes"
+                            checked={this.state.diabetes === 'yes'}
+                            onChange={this.handleChange}
+                            /><br/>
+                        
+                        <label>No</label>
+                            <input 
+                            type="radio" 
+                            name="diabetes" 
+                            value="no"
+                            checked={this.state.diabetes === 'no'}
+                            onChange={this.handleChange}
+                            /><br />
+                        </div>
+
+                 <Button type="submit" value="submit" >Submit</Button>
 
               </Form> 
             </div>

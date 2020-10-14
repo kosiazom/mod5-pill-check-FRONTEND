@@ -107,7 +107,7 @@ handleLogin = (e) => {
   handleOnChange={this.handleOnChange}/> }/>
  
   <Route path="/create-user-profile" render={(routerProps) => <CreateProfile {...routerProps}/>}/>
-  <Route path="/questions" render={(routerProps) => <QuestionnaireForm />} />
+  <Route path="/questions" render={(routerProps) => <QuestionnaireForm {...routerProps} />} />
 
   <Route path="/main-page" render={(routerProps) => <MainContainer currentUser={this.state.currentUser}/>} />
 
