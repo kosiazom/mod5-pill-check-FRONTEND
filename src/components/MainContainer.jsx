@@ -14,6 +14,9 @@ class MainContainer extends Component {
     state = {
         userView: "home",
         medications: [],
+        displayMedications: [],
+        // indication: "COPD"
+    
       }
  
   
@@ -26,20 +29,47 @@ class MainContainer extends Component {
       componentDidMount() {
             fetch(medsUrl)
             .then( res => res.json() )
-            .then(medications => console.log(medications[0]))
+            .then(medications => this.setState({
+                medications
+            }))
       }
 
+      getMeds = (e) => {
+    //       let copdDrugs = this.state.medications.filter(medication => medication.indication === "COPD" )
+    //       this.setState({
+    //           medications: copdDrugs
+    //       })
+      let filteredMeds = [...this.state.medications]
+      if(e.target.name) {
+          filteredMeds = filteredMeds.filter(medicine => medicine.indication == e.target.name)
+        //   copdMeds = copdMeds.filter(medicine => medicine.indication == this.state.indication)
+        //   debugger
+        // console.log(e.target.name)
+          this.setState({
+              userView: e.target.name,
+              displayMedications: filteredMeds
+          })
+      }
+     
+      }
       
 
 
 
     render() { 
-        // const component = this.state.isComponentClicked
+       
         return ( 
         <div className='main-container' >
            <Head />
-            <Sidebar userView={this.state.userView} handleChange={this.handleChange}/>
-            <UserHome userView={this.state.userView} handleChange={this.handleChange}/>
+            <Sidebar userView={this.state.userView} 
+            handleChange={this.handleChange}
+            getMeds={this.getMeds}
+            />
+            <UserHome userView={this.state.userView} 
+            handleChange={this.handleChange} 
+            displayMedications={this.state.displayMedications}
+          
+            />
             <Footer />
 
         </div> );

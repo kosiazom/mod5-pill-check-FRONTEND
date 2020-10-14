@@ -1,4 +1,5 @@
 import React from 'react'
+import DiabetesCard from 'react'
 
 const Diabetes = (props) => {
     return (

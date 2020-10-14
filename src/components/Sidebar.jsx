@@ -14,10 +14,19 @@ const SideBar = (props) => {
         <Button value="hld" onClick={(e) => this.props.handleChange(e)}>High Cholesterol</Button> 
         <Button value="notes" onClick={(e) => this.props.handleChange(e)}>My Notes</Button> */}
             <a name="mymeds" onClick={(e) => props.handleChange(e)}>My Meds</a><br/>
-            <a name="copd" onClick={(e) => props.handleChange(e)}>COPD</a><br/>
-            <a name="diabetes" onClick={(e) => props.handleChange(e)}>Diabetes</a><br/>
-            <a name="htn" onClick={(e) => props.handleChange(e)}>Hypertension</a><br/>
-            <a name="hc" onClick={(e) => props.handleChange(e)}>High Cholesterol</a><br/>
+            <a name="COPD" onClick={(e) => {
+                props.handleChange(e)
+                props.getMeds(e) }}>COPD</a><br/>
+            <a name="Diabetes" onClick={(e) => {
+                props.handleChange(e)
+                props.getMeds(e)}
+                }>Diabetes</a><br/>
+            <a name="Hypertension" onClick={(e) => {
+                props.handleChange(e)
+                props.getMeds(e)}}>Hypertension</a><br/>
+            <a name="Hyperlidemia" onClick={(e) => {
+                props.handleChange(e)
+                props.getMeds(e)}}>High Cholesterol</a><br/>
             <a name="notes" onClick={(e) => props.handleChange(e)}>My Notes</a><br/>
                 
 

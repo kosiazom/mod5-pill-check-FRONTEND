@@ -10,14 +10,15 @@ import MyMeds from './MyMeds';
 class UserHome extends Component {
 
     render() {
+        console.log(this.props)
         return (
             <div className="userHome">
 
              {this.props.userView === "mymeds" && <MyMeds />}  
-             {this.props.userView === "copd" && <Copd />}  
-             {this.props.userView === "diabetes" && <Diabetes/>}  
-             {this.props.userView === "htn" && <Hypertension />}  
-             {this.props.userView === "hc" && <Hyperlipidemia/>}  
+             {this.props.userView === "COPD" && <Copd displayMedications={this.props.displayMedications}/>}  
+             {this.props.userView === "Diabetes" && <Diabetes displayMedications={this.props.displayMedications}/>}  
+             {this.props.userView === "Hypertension" && <Hypertension />}  
+             {this.props.userView === "Hyperlidemia" && <Hyperlipidemia/>}  
              {this.props.userView === "notes" && <Notes />} 
             </div>
         );
