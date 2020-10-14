@@ -3,9 +3,13 @@ import CopdCard from './CopdCard'
 
 
 const Copd = (props) => {
-    return ( <div>
-        You are COPD
-        {props.displayMedications.map(copdMed =>  <CopdCard copdMed={copdMed}/>)}
+    return ( 
+    <div>
+         <h3>What is Chronic Obstructive Pulmonary Disease?</h3>
+         <p>COPD is blah blah blah</p>
+
+         <h4>Best ways to manage Chronic Obstructive Pulmonary Disease: </h4>
+        {props.displayMedications.map(copdMed =>  <CopdCard copdMed={copdMed} key={copdMed.id}/>)}
     </div> );
 }
  

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DiabetesCard = (props) => {
+const HLDCard = (props) => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const DiabetesCard = (props) => {
     )
 }
 
-export default DiabetesCard
+export default HLDCard

@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-const CopdCard = () => {
+const CopdCard = (props) => {
     return (
         <div>
             
