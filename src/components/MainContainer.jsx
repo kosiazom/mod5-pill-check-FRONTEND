@@ -8,12 +8,12 @@ import Head from './Head'
 import Footer from './Footer'
 import '../maincontainer.css'
 
-
+const medsUrl = 'http://localhost:3000/api/v1/medications'
 
 class MainContainer extends Component {
     state = {
         userView: "home",
-        notes: []
+        medications: [],
       }
  
   
@@ -21,6 +21,12 @@ class MainContainer extends Component {
       handleChange = (e) => {
       console.dir(e.target.name)
             this.setState({userView: e.target.name})
+      }
+
+      componentDidMount() {
+            fetch(medsUrl)
+            .then( res => res.json() )
+            .then(medications => console.log(medications[0]))
       }
 
       
