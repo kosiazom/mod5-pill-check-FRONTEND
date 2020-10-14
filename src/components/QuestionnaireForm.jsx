@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form'
 
 
-const diseaseUrl = 'http://localhost:3000/api/v1/vaccination_records'
+const diseaseUrl = 'http://localhost:3000/api/v1/disease_states'
 
 class QuestionnaireForm extends Component {
 
@@ -14,20 +14,20 @@ class QuestionnaireForm extends Component {
         copd: null
     }
 
-    componentDidMount() {
-        if(localStorage.token)
-        fetch(`http://localhost:3000/api/v1/users/${localStorage.userID}`)
-        .then( res => res.json() )
-        .then(user => {
-            this.setState({
-                currentUser: user,
-                hypertension: user.disease_state.hypertension ? "yes" : "no",
-                diabetes: user.disease_state.diabetes? "yes" : "no",
-                copd: user.disease_state.copd ? "yes" : "no",
-                hyperlipidemia: user.disease_state.hyperlipidemia ? "yes" : "no",
-            })
-        }) 
-    }
+    // componentDidMount() {
+    //     if(localStorage.token)
+    //     fetch(`http://localhost:3000/api/v1/users/${localStorage.userID}`)
+    //     .then( res => res.json() )
+    //     .then(user => {
+    //         this.setState({
+    //             currentUser: user,
+    //             hypertension: user.disease_state.hypertension ? "yes" : "no",
+    //             diabetes: user.disease_state.diabetes? "yes" : "no",
+    //             copd: user.disease_state.copd ? "yes" : "no",
+    //             hyperlipidemia: user.disease_state.hyperlipidemia ? "yes" : "no",
+    //         })
+    //     }) 
+    // }
 
     handleChange = (e) => {
         this.setState({
@@ -38,16 +38,17 @@ class QuestionnaireForm extends Component {
     handleSubmitForm = (e) => {
         e.preventDefault()
 
-        if(localStorage.token) {
+        console.log('tesint post')
             fetch(diseaseUrl, {
                 method: 'POST',
                 headers: {
-                    "Content-Type": 'application/json',
-                    "Authorization": `Bearer ${localStorage.token}`
+                    "Content-Type": 'application/json'
+                    // "Authorization": `Bearer ${localStorage.token}`
                 },
                 body: JSON.stringify(
+                        
                     { disease_state: {
-                        user_id: this.state.currentUser.id,
+                        user_id:  localStorage.userID,
                         hypertension: this.state.hypertension === "yes" ? true : false,
                         hyperlipidemia: this.state.hyperlipidemia === "yes" ? true : false,
                         diabetes: this.state.diabetes === "yes" ? true : false,
@@ -56,10 +57,10 @@ class QuestionnaireForm extends Component {
             })
             .then( res => res.json() )
             .then( console.log )
-        }
-        else {
-            alert("You must be logged In!!")
-        }
+        // }
+        // else {
+        //     alert("You must be logged In!!")
+        // }
 
     }
     
@@ -67,11 +68,11 @@ class QuestionnaireForm extends Component {
         return (
             <div>
                 <h3>Disease State Form</h3>
-                <Form>
+                <Form onSubmit={this.handleSubmitForm}>
                     <div className="question-column">
                     <label>Do you have COPD?</label>
                     </div>
-                    
+
                  <label>Do you have COPD?</label>
                  <input type="radio" name="copd" value="copd"></input>
 

@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
-import {Form, Input, TextArea, Button} from 'semantic-ui-react'
+import {Form, Input, TextArea, Button} from 'semantic-ui-react';
+import DatePicker from 'react-datepicker'
+import "react-datepicker/dist/react-datepicker.css"
+
 
 
 const Notes = () => {
 
-const [date, setDate] = useState("")
+const [date, setDate] = useState(new Date() )
 const [title, setTitle] =useState('')
 const [description, setDescription] = useState('')
 
-const today = new Date()
-const  todayDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
+const handleChange = date => {
+    setDate(date)
+}
+
+// const today = new Date()
+// const  todayDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
 
 // const handleChange = (e) => {
 //  debugger
@@ -27,7 +34,7 @@ const  todayDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + to
          value={date}
          type="text"
          placeholder='10/12/2015'
-         onchange={e => setDate(todayDate)}
+         onchange={null}
          />
 
         <Form.Field 

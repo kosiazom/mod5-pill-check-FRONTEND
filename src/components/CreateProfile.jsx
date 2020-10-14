@@ -62,8 +62,7 @@ class CreateProfile extends Component {
         this.setState({errorStatus: "Email cannot be blank!"})
     }
 
-   
-        fetch(userURL, {
+    fetch(userURL, {
             method: "POST", 
             headers: {
                 "Content-Type": "application/json",
@@ -92,7 +91,7 @@ class CreateProfile extends Component {
 
     handleClick = () =>{
         this.props.history.push({
-            pathname:`/main-page`
+            pathname:`/questions`
            })
     }
 

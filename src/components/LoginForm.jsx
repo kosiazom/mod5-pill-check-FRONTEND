@@ -5,29 +5,14 @@ import Head from './Head'
 import Footer from './Footer'
 import '../login.css'
 
-const loginURL = "http://localhost:3000/api/v1/login"
+
 
 class LoginForm extends Component {
    
 //    possibly use hooks here
-    state = {  
-        username: "",
-        password: ""
-    }
+    
 
 
-    handleOnChange = (e) =>{
-        if (e.target.name === 'username') {
-            this.setState({
-                username: e.target.value
-            })
-
-        }else if (e.target.name === 'password') {
-            this.setState({
-                password: e.target.value
-            })
-        }
-    }
 
     handleClick = () =>{
         this.props.history.push({
@@ -35,41 +20,7 @@ class LoginForm extends Component {
            })
     }
 
-    handleLogin = (e) => {
-        // debugger
-        e.preventDefault()
-        if(this.state.username.length === 0){
-            this.setState({
-                errorStatus: "Username cannot be blank!"
-            })
-        } else if( this.state.password.length === 0){
-            this.setState({
-                errorStatus: "Password cannot be blank!"
-            })
-        } else{
-
-        fetch(loginURL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                Accept: 'application/json'
-            }, 
-            body: JSON.stringify({
-                username: this.state.username,
-                password: this.state.password
-            })
-        })
-        .then(res => res.json() )
-        .then( userInfo => { 
-            localStorage.token = userInfo.token
-            localStorage.username = userInfo.username
-            localStorage.id = userInfo.id
-            console.log(userInfo)
-        
-        })
-        e.target.reset()
-        }
-    }
+    
 
     render() { 
         return ( 
@@ -82,7 +33,9 @@ class LoginForm extends Component {
                 <Image src={require("../images/pillcheck-logo.png")}/> Log-in to your account
             </Header>
 
-            <Form size='large' onSubmit={(e) => this.handleLogin(e)} >
+            <Form size='large' onSubmit={(e) =>{
+                this.handleClick()
+                this.props.handleLogin(e) }} >
                 <Segment stacked>
                 <Form.Input 
                 fluid 
@@ -91,8 +44,8 @@ class LoginForm extends Component {
                 name='username'
                 placeholder='Username' 
                 type='text'
-                value={this.state.username} 
-                onChange={this.handleOnChange}
+                // value={this.state.username} 
+                // onChange={this.handleOnChange}
                 />
 
                 <Form.Input
@@ -102,11 +55,11 @@ class LoginForm extends Component {
                     name='password'
                     placeholder='Password'
                     type='password'
-                    value={this.state.password} 
-                    onChange={this.handleOnChange}
+                    // value={this.state.password} 
+                    // onChange={this.handleOnChange}
                 />
 
-                <Button color='olive' fluid size='large' onClick={this.handleClick}>
+                <Button color='olive' fluid size='large' >
                     Login
                 </Button>
                 </Segment>
