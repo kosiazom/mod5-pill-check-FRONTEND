@@ -17,7 +17,7 @@ class MainContainer extends Component {
         userView: "home",
         medications: [],
         displayMedications: [],
-        displayNotes: []
+        // displayNotes: []
         // indication: "COPD"
       }
  
@@ -36,13 +36,13 @@ class MainContainer extends Component {
             }))
       }
 
-      componentDidMount(){
-        fetch(notesUrl)
-        .then( res => res.json() )
-        .then(notes => this.setState({
-          displayNotes: notes
-        }))
-      }
+      // componentDidMount(){
+      //   fetch(notesUrl)
+      //   .then( res => res.json() )
+      //   .then(notes => this.setState({
+      //     displayNotes: notes
+      //   }))
+      // }
 
       getMeds = (e) => {
     //       let copdDrugs = this.state.medications.filter(medication => medication.indication === "COPD" )

@@ -6,6 +6,7 @@ import NotesDetails from './NotesDetails';
 
 
 const notesUrl = 'http://localhost:3000/api/v1/notes'
+console.log(localStorage)
 
 const Notes = (props) => {
 
