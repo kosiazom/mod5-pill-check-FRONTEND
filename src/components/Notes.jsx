@@ -2,15 +2,18 @@ import React, { useState } from 'react';
 import {Form, Input, TextArea, Button} from 'semantic-ui-react';
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
+import NotesDetails from './NotesDetails';
 
 
 const notesUrl = 'http://localhost:3000/api/v1/notes'
 
-const Notes = () => {
+const Notes = (props) => {
 
-const [date, setDate] = useState(new Date() )
+const [date, setDate] = useState( new Date() )
 // const [title, setTitle] = useState("")
 const [description, setDescription] = useState("")
+
+const [notesArray, setNotes] = useState([])
 // const [currentUser, setCurrentUser] = useState({})
 
 // const handleChange = date => {
@@ -42,13 +45,14 @@ const createNote = (e) => {
         })
     })
     .then(res => res.json() )
-    .then( console.log )
+    .then( note =>  setNotes(note))
+                  
 }
 
 
     return (
          <div>
-       <Form onSubmit={createNote}>
+       <Form onSubmit={(e) => createNote(e)}>
          {/* <Form.Field 
          control={Input}
          label="Date"
@@ -91,7 +95,7 @@ const createNote = (e) => {
 
        </Form>
 
-
+         {notesArray.map(noteObj => <NotesDetails noteObj={noteObj}  />)}
     
         </div> );
 }

@@ -9,14 +9,16 @@ import Footer from './Footer'
 import '../maincontainer.css'
 
 const medsUrl = 'http://localhost:3000/api/v1/medications'
+const notesUrl = 'http://localhost:3000/api/v1/notes'
+
 
 class MainContainer extends Component {
     state = {
         userView: "home",
         medications: [],
         displayMedications: [],
+        displayNotes: []
         // indication: "COPD"
-    
       }
  
   
@@ -32,6 +34,14 @@ class MainContainer extends Component {
             .then(medications => this.setState({
                 medications
             }))
+      }
+
+      componentDidMount(){
+        fetch(notesUrl)
+        .then( res => res.json() )
+        .then(notes => this.setState({
+          displayNotes: notes
+        }))
       }
 
       getMeds = (e) => {
@@ -68,6 +78,7 @@ class MainContainer extends Component {
             <UserHome userView={this.state.userView} 
             handleChange={this.handleChange} 
             displayMedications={this.state.displayMedications}
+            displayNotes={this.state.displayNotes}
           
             />
             <Footer />
