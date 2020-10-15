@@ -6,10 +6,15 @@ import { Card } from 'semantic-ui-react'
 const CopdCard = (props) => {
     // console.log(props)
     return (
+        
         <div>
-            <h3>{props.copdMed.name}</h3>
-            <img src={props.copdMed.image}/>
-            
+          <Card.Group>
+                <Card 
+                color='red'
+                image={props.copdMed.image}
+                header={props.copdMed.name}
+                />
+           </Card.Group>
         </div>
     )
 }

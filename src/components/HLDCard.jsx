@@ -1,10 +1,17 @@
 import React from 'react'
+import {Card} from 'semantic-ui-react'
 
 const HLDCard = (props) => {
     return (
+
         <div>
-            <h3>{props.hldMed.name}</h3>
-            <img src={props.hldMed.image} />
+            <Card.Group>
+            <Card
+            color="red"
+            image={props.hldMed.image}
+            header={props.hldMed.name} 
+            />
+            </Card.Group>
         </div>
     )
 }

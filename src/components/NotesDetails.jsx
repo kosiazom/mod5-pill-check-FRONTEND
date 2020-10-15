@@ -8,7 +8,7 @@ const NotesDetails = (props) => {
             <Card>
                 <Card.Content>
                     <Card.Header>Note Title</Card.Header>
-                    <Card.Meta>{Date()}</Card.Meta>
+                    <Card.Meta>{props.noteObj.date}</Card.Meta>
                     <Card.Description>
                         {props.noteObj.description}
                     </Card.Description>

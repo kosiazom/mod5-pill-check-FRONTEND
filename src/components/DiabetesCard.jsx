@@ -1,12 +1,17 @@
 import React from 'react'
+import { Card } from 'semantic-ui-react'
 
 const DiabetesCard = (props) => {
     console.log(props)
     return (
         <div>
-            <h3>{props.dmMed.name}</h3>
-            <img src={props.dmMed.image} />
-            
+          <Card.Group>
+            <Card
+            color='blue'
+            image={props.dmMed.image}
+            header={props.dmMed.name}
+            />
+            </Card.Group>  
         </div>
     )
 }
