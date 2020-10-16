@@ -10,7 +10,8 @@ const MyMeds = (props) => {
  
 
   const pickMeds = (e) => {
-      setMed(e.target.value)
+    //  console.dir(e)
+    setMed(selectedValue)
   }
   // handle input change event
   const handleInputChange = value => {
@@ -44,7 +45,7 @@ const MyMeds = (props) => {
         
       />
       {/* <pre>Selected Value: {JSON.stringify(selectedValue, null, 2)}</pre> */}
-      <Button onClick={(e) => }>Add Medication</Button>
+      <Button onClick={(e) =>pickMeds(e)}>Add Medication</Button>
 
         </div>
     )
