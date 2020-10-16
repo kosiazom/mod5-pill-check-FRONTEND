@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import AsyncSelect from 'react-select/async'
 import {Button} from 'semantic-ui-react'
 import MyMedsCard from './MyMedsCard'
 import {Form} from 'semantic-ui-react'
 
 const MyMeds = (props) => {
-
+ const userMeds =`http://localhost:3000/api/v1/users/${localStorage.id}/medications`
   const url = `http://localhost:3000/api/v1/user_medications`
 
     const [inputValue, setValue] = useState('');
@@ -13,10 +13,16 @@ const MyMeds = (props) => {
   const [med, setMed] = useState([])
  
 
-  const pickMeds = (e) => {
-    //  console.dir(e)
-    setMed(selectedValue)
-  }
+  useEffect(() => {
+    fetch(url, {
+        method: "GET",
+        headers: {
+          "Authorization": `Bearer ${localStorage.token}`
+        }
+    }) 
+    .then(res => res.json() )
+    .then(userMeds => setMed(userMeds))
+  }, [])
   // handle input change event
   const handleInputChange = value => {
     setValue(value);
@@ -56,7 +62,8 @@ const MyMeds = (props) => {
       })
     })
     .then(res => res.json())
-    .then(console.log)
+    // .then(myDrug => setMed([...med, myDrug]))
+    .then(setMed([...med, selectedValue]))
   } 
  
     return (
@@ -76,11 +83,11 @@ const MyMeds = (props) => {
         
       />
       {/* <pre>Selected Value: {JSON.stringify(selectedValue, null, 2)}</pre> */}
-      <Button onClick={(e) =>pickMeds(e)}>Add Medication</Button><br/>
+      <Button >Add Medication</Button><br/>
       </Form>
 
        <div>
-      <MyMedsCard med={med}/>
+      {med.map( medObj => <MyMedsCard medObj={medObj} />)}
       </div>
 
 

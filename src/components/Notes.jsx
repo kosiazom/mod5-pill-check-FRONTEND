@@ -31,7 +31,8 @@ const createNote = (e) => {
     fetch(myNotesUrl, {
         method: 'POST',
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${localStorage.token}`
         },
 
         body: JSON.stringify({
@@ -42,7 +43,7 @@ const createNote = (e) => {
         })
     })
     .then(res => res.json() )
-    .then( newNote =>  setMyNotes([ newNote]))
+    .then( newNote =>  setMyNotes([...myNotes, newNote]))
 
 
                   
