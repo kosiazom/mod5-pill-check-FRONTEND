@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import Notes from './Notes'
-import Copd from './Copd';
-import {Button } from 'semantic-ui-react';
 import Sidebar from './Sidebar'
 import UserHome from './UserHome'
 import Head from './Head'
@@ -17,12 +14,12 @@ class MainContainer extends Component {
         userView: "home",
         medications: [],
         displayMedications: [],
+        myMeds: []
         // displayNotes: []
-        // indication: "COPD"
+        
       }
  
   
-
       handleChange = (e) => {
       console.dir(e.target.name)
             this.setState({userView: e.target.name})
@@ -36,19 +33,9 @@ class MainContainer extends Component {
             }))
       }
 
-      // componentDidMount(){
-      //   fetch(notesUrl)
-      //   .then( res => res.json() )
-      //   .then(notes => this.setState({
-      //     displayNotes: notes
-      //   }))
-      // }
 
       getMeds = (e) => {
-    //       let copdDrugs = this.state.medications.filter(medication => medication.indication === "COPD" )
-    //       this.setState({
-    //           medications: copdDrugs
-    //       })
+    //       
       let filteredMeds = [...this.state.medications]
       if(e.target.name) {
           filteredMeds = filteredMeds.filter(medicine => medicine.indication == e.target.name)
@@ -79,6 +66,8 @@ class MainContainer extends Component {
             handleChange={this.handleChange} 
             displayMedications={this.state.displayMedications}
             displayNotes={this.state.displayNotes}
+            myMeds={this.state.myMeds}
+    
           
             />
             <Footer />

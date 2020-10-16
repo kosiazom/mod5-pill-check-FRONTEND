@@ -14,7 +14,7 @@ class UserHome extends Component {
         return (
             <div className="userHome">
 
-             {this.props.userView === "mymeds" && <MyMeds />}  
+             {this.props.userView === "mymeds" && <MyMeds myMeds={this.props.myMeds} />}  
              {this.props.userView === "COPD" && <Copd displayMedications={this.props.displayMedications}/>}  
              {this.props.userView === "Diabetes" && <Diabetes displayMedications={this.props.displayMedications}/>}  
              {this.props.userView === "Hypertension" && <Hypertension displayMedications={this.props.displayMedications}/>}  

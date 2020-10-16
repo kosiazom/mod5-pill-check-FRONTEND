@@ -1,54 +1,54 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Form, Input, TextArea, Button} from 'semantic-ui-react';
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
 import NotesDetails from './NotesDetails';
 
 
-const notesUrl = 'http://localhost:3000/api/v1/notes'
-console.log(localStorage)
+// const notesUrl = 'http://localhost:3000/api/v1/notes'
+const myNotesUrl = `http://localhost:3000/api/v1/users/${localStorage.id}/notes`
+
 
 const Notes = (props) => {
 
 const [date, setDate] = useState( new Date() )
 // const [title, setTitle] = useState("")
 const [description, setDescription] = useState("")
+// const [notesArray, setNotes] = useState([])
+const [myNotes, setMyNotes] = useState([])
 
-const [notesArray, setNotes] = useState([])
-// const [currentUser, setCurrentUser] = useState({})
 
-// const handleChange = date => {
-//     setDate(date)
-// }
-
-// const today = new Date()
-// const  todayDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
-
-// const handleChange = (e) => {
-//  debugger
-// }
+useEffect(() => {
+  fetch(myNotesUrl)
+  .then(res => res.json() )
+  .then(userNote => setMyNotes(userNote))
+}, [])
 
 const createNote = (e) => {
     console.log(e.target.date.value)
     e.preventDefault()
 
-    fetch(notesUrl, {
+    fetch(myNotesUrl, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
         },
 
         body: JSON.stringify({
-                user_id: localStorage.userID,
+                user_id: localStorage.id,
                 date: e.target.date.value,
                 description: e.target.description.value
             
         })
     })
     .then(res => res.json() )
-    .then( note =>  setNotes(note))
+    .then( newNote =>  setMyNotes([ newNote]))
+
+
                   
 }
+
+
 
 
     return (
@@ -96,7 +96,7 @@ const createNote = (e) => {
 
        </Form>
 
-         {notesArray.map(noteObj => <NotesDetails noteObj={noteObj}  />)}
+         {myNotes.map(noteObj => <NotesDetails noteObj={noteObj}  />)}
     
         </div> );
 }
