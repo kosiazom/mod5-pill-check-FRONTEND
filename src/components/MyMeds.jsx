@@ -5,8 +5,11 @@ import MyMedsCard from './MyMedsCard'
 import {Form} from 'semantic-ui-react'
 
 const MyMeds = (props) => {
- const userMeds =`http://localhost:3000/api/v1/users/${localStorage.id}/medications`
-  const url = `http://localhost:3000/api/v1/user_medications`
+  
+  // /api/v1/user_medications(.:format)
+ const userMeds =`http://localhost:3000/api/v1/user_medications`
+  const url = `http://localhost:3000/api/v1/users/`
+  // /api/v1/users/:user_id/medications
 
     const [inputValue, setValue] = useState('');
   const [selectedValue, setSelectedValue] = useState(null);
@@ -14,14 +17,14 @@ const MyMeds = (props) => {
  
 
   useEffect(() => {
-    fetch(url, {
+    fetch(url + localStorage.id, {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${localStorage.token}`
         }
     }) 
     .then(res => res.json() )
-    .then(userMeds => setMed(userMeds))
+    .then(userMeds => setMed(userMeds.medications))
   }, [])
   // handle input change event
   const handleInputChange = value => {
@@ -43,9 +46,7 @@ const MyMeds = (props) => {
   const createMyMeds = (e) => {
     e.preventDefault()
 
-    // debugger
-
-    fetch(url, {
+    fetch(userMeds, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -56,14 +57,14 @@ const MyMeds = (props) => {
         // drug_class: selectedValue.drug_class,
         // side_effects: selectedValue.side_effects,
         // indication: selectedValue.indication,
-        // image: selectedValue.image
+        // image: selectedValue.image,
         user_id: localStorage.id,
         medication_id: selectedValue.id
       })
     })
     .then(res => res.json())
     // .then(myDrug => setMed([...med, myDrug]))
-    .then(setMed([...med, selectedValue]))
+    .then(selectedValue =>setMed([...med, selectedValue]))
   } 
  
     return (
@@ -87,10 +88,9 @@ const MyMeds = (props) => {
       </Form>
 
        <div>
-      {med.map( medObj => <MyMedsCard medObj={medObj} />)}
+       {med.map(medObj => <MyMedsCard medObj={medObj} />)}
       </div>
-
-
+     
         </div>
     )
 }
