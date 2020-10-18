@@ -7,7 +7,7 @@ const diseaseUrl = 'http://localhost:3000/api/v1/disease_states'
 class QuestionnaireForm extends Component {
 
     state ={
-        currentUser: {},
+        currentUser: " ",
         hypertension: null,
         diabetes: null,
         hyperlipidemia: null,
@@ -62,7 +62,13 @@ class QuestionnaireForm extends Component {
                     }})
             })
             .then( res => res.json() )
-            .then( console.log )
+            .then( diseases => this.setState({
+                currentUser: localStorage.first_name,
+                hypertension: this.state.hypertension,
+                hyperlipidemia: this.state.hyperlipidemia,
+                copd: this.state.copd,
+                diabetes:this.state.diabetes
+            }))
         // }
         // else {
         //     alert("You must be logged In!!")
@@ -73,10 +79,13 @@ class QuestionnaireForm extends Component {
     render() {
         return (
             <div>
+                <h1>Hello, {this.state.currentUser} Welcome to PillCheck!!</h1>
+                <h3>Please Fill Out the Form below</h3>
                 <h3>Disease State Form</h3>
                 <Form onSubmit={(e) => {
-                    this.handleSubmitForm()
-                    this.handleRedirect()}}>
+                    this.handleSubmitForm(e)
+                    // this.handleRedirect(e)}}>
+                }}>
         
             <div className="question-column">
                         <label>Do you have COPD?</label>
@@ -179,6 +188,8 @@ class QuestionnaireForm extends Component {
                  <Button type="submit" value="submit" >Submit</Button>
 
               </Form> 
+
+            Hypertension:  {this.state.hypertension}
             </div>
         );
     }

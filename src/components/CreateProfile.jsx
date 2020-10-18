@@ -1,5 +1,6 @@
 import React, {Component } from 'react';
 import { Form, Button, Input, Header} from 'semantic-ui-react'
+import QuestionnaireForm from './QuestionnaireForm'
 
 const userURL = "http://localhost:3000/api/v1/users"
 
@@ -161,6 +162,7 @@ render(){
          <Button primary type="submit" >Click here to Register!</Button> 
 
  </Form>
+
     </div> 
     );
         }
