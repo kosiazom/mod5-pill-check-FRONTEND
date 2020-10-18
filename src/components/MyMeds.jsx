@@ -56,7 +56,7 @@ const MyMeds = (props) => {
       })
     })
     .then(res => res.json())
-    .then(console.log)
+    .then(selectedValue =>setMed([...med, selectedValue]))
   } 
  
     return (
