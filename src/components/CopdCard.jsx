@@ -8,13 +8,13 @@ const CopdCard = (props) => {
     return (
         
         <div>
-          <Card.Group>
+       
                 <Card 
                 color='red'
                 image={props.copdMed.image}
                 header={props.copdMed.name}
                 />
-           </Card.Group>
+        
         </div>
     )
 }

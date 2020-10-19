@@ -10,8 +10,13 @@ const Hyperlipidemia = (props) => {
             <p>Hyperlipidemia is blah blah blah</p>
 
             <h4>Best ways to manage Hyperlipidemia: </h4>
+
+
+
+
+            <div className="ui four cards">
             {props.displayMedications.map(hldMed =>  <HLDCard hldMed={hldMed} key={hldMed.id}/>)}
-        
+            </div>
         </div>
     )
     

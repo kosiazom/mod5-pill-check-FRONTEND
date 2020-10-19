@@ -6,6 +6,7 @@ import NotesDetails from './NotesDetails';
 
 
 
+
 // const notesUrl = 'http://localhost:3000/api/v1/notes'
 const myNotesUrl = `http://localhost:3000/api/v1/users/${localStorage.id}/notes/`
 
@@ -15,6 +16,7 @@ const Notes = (props) => {
 const [date, setDate] = useState( new Date() )
 const [title, setTitle] = useState("")
 const [description, setDescription] = useState("")
+const [update, setupdate] = useState(false);
 
 
 const [myNotes, setMyNotes] = useState([])
@@ -54,18 +56,25 @@ const createNote = (e) => {
     .then(res => res.json() )
     .then( newNote =>  setMyNotes([...myNotes, newNote]))
     
-    e.target.reset()
+  debugger
+    // console.log(e.target)
     
 }
 const editNote = (note) => {
- 
+ debugger
   fetch(myNotesUrl + note.id, {
     method: "PATCH", 
     headers: {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${localStorage.token}`
-    }
+    },
+    body: JSON.stringify({
+      title: note.title,
+      description: note.description
+    })
   })
+  .then( res => res.json() )
+  .then(updateNote => setupdate(true))
 }
 
 const deleteMyNote = (note) => {

@@ -17,7 +17,9 @@ const Copd = (props) => {
         <div>
          <h4>Common Medications used for COPD:</h4>
          </div>
+         <div className="ui four cards">
         {props.displayMedications.map(copdMed =>  <CopdCard copdMed={copdMed} key={copdMed.id}/>)}
+        </div>
     </div> );
 }
  

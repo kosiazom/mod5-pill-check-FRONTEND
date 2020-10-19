@@ -3,7 +3,7 @@ import {Card, Button, Header, Modal, Icon} from 'semantic-ui-react'
 
 
 const NotesDetails = (props) => {
-    console.log(props)
+    // console.log(props)
     const [open, setOpen] = useState(false)
 
     return (
