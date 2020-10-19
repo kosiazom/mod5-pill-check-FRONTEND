@@ -56,12 +56,12 @@ const createNote = (e) => {
     .then(res => res.json() )
     .then( newNote =>  setMyNotes([...myNotes, newNote]))
     
-  debugger
+  // debugger
     // console.log(e.target)
     
 }
 const editNote = (note) => {
- debugger
+//  debugger
   fetch(myNotesUrl + note.id, {
     method: "PATCH", 
     headers: {
@@ -74,7 +74,7 @@ const editNote = (note) => {
     })
   })
   .then( res => res.json() )
-  .then(updateNote => setupdate(true))
+  .then()
 }
 
 const deleteMyNote = (note) => {

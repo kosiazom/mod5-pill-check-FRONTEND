@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import {Card, Button, Header, Modal, Icon} from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
+// import EditNoteDetail
 
 
 const NotesDetails = (props) => {
@@ -36,10 +38,13 @@ const NotesDetails = (props) => {
                                         onClick={(e) => props.deleteMyNote(props.noteObj)}>
                     <Icon name='remove' /> Delete
                     </Button>
-                    <Button color='green' onClick={() => setOpen(false)}
-                                          onClick={(e) => props.editNote(props.noteObj)}>
+                    {/* <Link to={{ pathname: "edit-event", eventToBeEdited: props.anEvent }}></Link> */}
+                    <Link to={{pathname: "edit-note", noteToEdit: props.noteObj}}>
+                    <Button color='green' onClick={() => setOpen(false)}>
+                                             
                     <Icon name='checkmark' /> Edit
                     </Button>
+                    </Link>
                 </Modal.Actions>
     </Modal>
   

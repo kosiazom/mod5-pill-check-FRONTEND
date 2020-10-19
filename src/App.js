@@ -6,11 +6,13 @@ import CreateProfile from './components/CreateProfile';
 import MainContainer from './components/MainContainer';
 import Home from './components/Home'
 import QuestionnaireForm from './components/QuestionnaireForm'
+import EditNoteDetail from './components/EditNoteDetail'
 import AppCss from './App.css'
 
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 const loginURL = "http://localhost:3000/api/v1/login"
+const myNotesUrl = `http://localhost:3000/api/v1/users/${localStorage.id}/notes/`
 
 class App extends React.Component {
   state ={
@@ -90,8 +92,24 @@ handleLogin = (e) => {
   //         errorStatus: "Password cannot be blank!"
   //     })
   // } else{
-
 }
+ editNote = (e) => {
+  console.log(e)
+  let note_id = e.target.id.value
+    fetch(myNotesUrl + note_id, {
+      method: "PATCH", 
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${localStorage.token}`
+      },
+      body: JSON.stringify({
+        title: e.target.title.value,
+        description: e.target.description.value
+      })
+    })
+    .then( res => res.json() )
+    .then(console.log)
+  }
 
 
 
@@ -111,6 +129,7 @@ handleLogin = (e) => {
   <Route path="/questions" render={(routerProps) => <QuestionnaireForm {...routerProps} />} />
 
   <Route path="/main-page" render={(routerProps) => <MainContainer currentUser={this.state.currentUser}/>} />
+  <Route exact path="/edit-note" render={(routerProps) => <EditNoteDetail editNote={this.editNote} {...routerProps} />} />
 
 {/* 
       </Switch> */}
