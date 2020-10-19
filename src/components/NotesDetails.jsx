@@ -3,13 +3,14 @@ import {Card, Button, Header, Modal, Icon} from 'semantic-ui-react'
 
 
 const NotesDetails = (props) => {
+    console.log(props)
     const [open, setOpen] = useState(false)
 
     return (
      <div>
             <Card>
                 <Card.Content>
-                    <Card.Header>Note Title</Card.Header>
+                    <Card.Header>{props.noteObj.title}</Card.Header>
                     <Card.Meta>{props.noteObj.date}</Card.Meta>
                     <Card.Description>
                         {props.noteObj.description}
@@ -24,14 +25,15 @@ const NotesDetails = (props) => {
                 onClose={() => setOpen(false)}
                 onOpen={() => setOpen(true)}
                 >
-                <Header icon='sticky note' content='Note Title' />
+                <Header icon='sticky note' content={props.noteObj.title} />
                 <Modal.Content>
                     <p>
                     {props.noteObj.description}
                     </p>
                 </Modal.Content>
                 <Modal.Actions>
-                    <Button color='red' onClick={() => setOpen(false)}>
+                    <Button color='red' onClick={() => setOpen(false)}
+                                        onClick={(e) => props.deleteMyNote(props.noteObj)}>
                     <Icon name='remove' /> Delete
                     </Button>
                     <Button color='green' onClick={() => setOpen(false)}>

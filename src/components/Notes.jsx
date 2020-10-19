@@ -6,15 +6,16 @@ import NotesDetails from './NotesDetails';
 
 
 // const notesUrl = 'http://localhost:3000/api/v1/notes'
-const myNotesUrl = `http://localhost:3000/api/v1/users/${localStorage.id}/notes`
+const myNotesUrl = `http://localhost:3000/api/v1/users/${localStorage.id}/notes/`
 
 
 const Notes = (props) => {
 
 const [date, setDate] = useState( new Date() )
-// const [title, setTitle] = useState("")
+const [title, setTitle] = useState("")
 const [description, setDescription] = useState("")
-// const [notesArray, setNotes] = useState([])
+
+
 const [myNotes, setMyNotes] = useState([])
 
 
@@ -44,15 +45,28 @@ const createNote = (e) => {
         body: JSON.stringify({
                 user_id: localStorage.id,
                 date: e.target.date.value,
+                title: e.target.title.value,
                 description: e.target.description.value
             
         })
     })
     .then(res => res.json() )
     .then( newNote =>  setMyNotes([...myNotes, newNote]))
-
-
                   
+}
+
+const deleteMyNote = (note) => {
+  // debugger
+  // console.log(noteObj)
+  fetch(myNotesUrl+ note.id, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${localStorage.token}`
+    }
+  })
+  .then( res => res.json() )
+  .then(setMyNotes(myNotes.filter(currentNotes => currentNotes !== note)))
 }
 
 
@@ -79,7 +93,7 @@ const createNote = (e) => {
         />
         
 
-{/* 
+
         <Form.Field
          control={Input}
          label="Title"
@@ -87,8 +101,8 @@ const createNote = (e) => {
          type="text"
          value={title}
          placeholder='Title'
-         onChange={e => setTitle(e.target.value)}
-         />  */}
+         onChange={(e) => setTitle(e.target.value)}
+         /> 
 
         <Form.Field 
          control={TextArea}
@@ -103,7 +117,7 @@ const createNote = (e) => {
 
        </Form>
 
-         {myNotes.map(noteObj => <NotesDetails noteObj={noteObj}  />)}
+         {myNotes.map(noteObj => <NotesDetails noteObj={noteObj} deleteMyNote={deleteMyNote}  />)}
     
         </div> );
 }

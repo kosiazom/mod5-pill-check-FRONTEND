@@ -19,7 +19,7 @@ class UserHome extends Component {
              {this.props.userView === "Diabetes" && <Diabetes displayMedications={this.props.displayMedications}/>}  
              {this.props.userView === "Hypertension" && <Hypertension displayMedications={this.props.displayMedications}/>}  
              {this.props.userView === "Hyperlidemia" && <Hyperlipidemia displayMedications={this.props.displayMedications}/>}  
-             {this.props.userView === "notes" && <Notes displayNotes={this.props.displayNotes}/>} 
+             {this.props.userView === "notes" && <Notes />} 
             </div>
         );
     }

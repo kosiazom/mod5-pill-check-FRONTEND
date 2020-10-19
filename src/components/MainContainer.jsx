@@ -15,8 +15,7 @@ class MainContainer extends Component {
         medications: [],
         displayMedications: [],
         myMeds: []
-        // displayNotes: []
-        
+    
       }
  
   
@@ -65,7 +64,6 @@ class MainContainer extends Component {
             <UserHome userView={this.state.userView} 
             handleChange={this.handleChange} 
             displayMedications={this.state.displayMedications}
-            displayNotes={this.state.displayNotes}
             myMeds={this.state.myMeds}
     
           
