@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Form, Button, Grid, Header, Image, Message, Segment, Icon} from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-import Head from './Head'
-import Footer from './Footer'
 import '../login.css'
 
 
@@ -25,7 +23,7 @@ class LoginForm extends Component {
     render() { 
         return ( 
             <div>
-            <Head />
+        
             <div className="home-picture">
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
             <Grid.Column style={{ maxWidth: 450 }}>
@@ -86,7 +84,7 @@ class LoginForm extends Component {
                 <Link to='/create-user-profile'><p>Not a user? Create an account!</p></Link> */}
                 
             </div>
-                <Footer />
+               
 
             </div>
          );

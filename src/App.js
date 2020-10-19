@@ -6,6 +6,7 @@ import CreateProfile from './components/CreateProfile';
 import MainContainer from './components/MainContainer';
 import Home from './components/Home'
 import QuestionnaireForm from './components/QuestionnaireForm'
+import AppCss from './App.css'
 
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
@@ -55,17 +56,7 @@ handleLogin = (e) => {
   // debugger
 
   console.log(e.target.username.value)
-  // e.preventDefault()
-  // if(this.state.username.length === 0){
-  //     this.setState({
-  //         errorStatus: "Username cannot be blank!"
-  //     })
-  // } else if( this.state.password.length === 0){
-  //     this.setState({
-  //         errorStatus: "Password cannot be blank!"
-  //     })
-  // } else{
-
+  
   fetch(loginURL, {
       method: 'POST',
       headers: {
@@ -89,7 +80,17 @@ handleLogin = (e) => {
   
   })
   e.target.reset()
-  
+  // e.preventDefault()
+  // if(this.state.username.length === 0){
+  //     this.setState({
+  //         errorStatus: "Username cannot be blank!"
+  //     })
+  // } else if( this.state.password.length === 0){
+  //     this.setState({
+  //         errorStatus: "Password cannot be blank!"
+  //     })
+  // } else{
+
 }
 
 
@@ -98,7 +99,7 @@ handleLogin = (e) => {
   return (
     <BrowserRouter >
     
-      
+    <Head/>
      {/* <Switch > */}
     <Route exact path="/" component={Home} />
 
@@ -114,7 +115,7 @@ handleLogin = (e) => {
 {/* 
       </Switch> */}
 
-     
+    <Footer />
     </BrowserRouter>
   );
 }

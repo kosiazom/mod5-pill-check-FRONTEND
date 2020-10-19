@@ -37,6 +37,14 @@
     transform: rotate(360deg);
   }
 }
+.ui.form {
+  position: relative;
+  max-width: 100%;
+  width: 50%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 300px;
+}
 
 .home-picture {
   background-image: url("https://ak.picdn.net/shutterstock/videos/8025358/thumb/1.jpg");

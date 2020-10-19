@@ -2,14 +2,14 @@
     border: 1px solid#DCDCDC;
     box-shadow: 0 0 0 3px;
     bottom: 0;
-    height: 10vh;
+    /* left: 0; */
+    height: 50px;
     width: 100%;
     background-color: olive;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 1000px;
+    /* top: 1000px; */
   }
 
   .center {

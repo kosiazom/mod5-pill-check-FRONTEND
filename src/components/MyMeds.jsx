@@ -87,9 +87,9 @@ const MyMeds = (props) => {
       <Button >Add Medication</Button><br/>
       </Form>
 
-       <div>
+      <div className="ui four cards">
        {med.map(medObj => <MyMedsCard medObj={medObj} />)}
-      </div>
+       </div>
      
         </div>
     )

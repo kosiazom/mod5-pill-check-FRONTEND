@@ -56,19 +56,24 @@ class MainContainer extends Component {
        
         return ( 
         <div className='main-container' >
-           <Head />
+          
+           
             <Sidebar userView={this.state.userView} 
             handleChange={this.handleChange}
             getMeds={this.getMeds}
             />
+
+        <div> Hi {localStorage.username}</div>
             <UserHome userView={this.state.userView} 
             handleChange={this.handleChange} 
             displayMedications={this.state.displayMedications}
             myMeds={this.state.myMeds}
-    
+          
           
             />
-            <Footer />
+           
+       
+        
 
         </div> );
     }

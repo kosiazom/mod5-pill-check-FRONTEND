@@ -8,8 +8,8 @@ import "../Header.css"
 
 
 
-const Head = () => {
-
+const Head = (props) => {
+console.log(props)
     return (
         <Header as='h4' block={'boolean'} size={'small'} color={'olive'} dividing={'bool'}>
            <NavBar/>

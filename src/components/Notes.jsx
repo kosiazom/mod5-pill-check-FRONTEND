@@ -32,7 +32,7 @@ useEffect(() => {
 }, [])
 
 const createNote = (e) => {
-    console.log(e.target.date.value)
+    // console.log(e.target.date.value)
     e.preventDefault()
 
     fetch(myNotesUrl, {
@@ -52,7 +52,9 @@ const createNote = (e) => {
     })
     .then(res => res.json() )
     .then( newNote =>  setMyNotes([...myNotes, newNote]))
-                  
+    
+    e.target.reset()
+    
 }
 
 const deleteMyNote = (note) => {
@@ -90,6 +92,7 @@ const deleteMyNote = (note) => {
         name="date"
         onChange={(e) => setDate(e.target.value)}
         value={date}
+        
         />
         
 
@@ -113,12 +116,12 @@ const deleteMyNote = (note) => {
          placeholder='What are you feeling...'
          onChange={e => setDescription(e.target.value)}
          />
-         <Button type='submit'>Add My Note</Button>
+         <Button>Add My Note</Button>
 
        </Form>
-
+        <div>
          {myNotes.map(noteObj => <NotesDetails noteObj={noteObj} deleteMyNote={deleteMyNote}  />)}
-    
+     </div>
         </div> );
 }
  
