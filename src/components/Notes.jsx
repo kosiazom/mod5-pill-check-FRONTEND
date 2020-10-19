@@ -5,6 +5,7 @@ import "react-datepicker/dist/react-datepicker.css"
 import NotesDetails from './NotesDetails';
 
 
+
 // const notesUrl = 'http://localhost:3000/api/v1/notes'
 const myNotesUrl = `http://localhost:3000/api/v1/users/${localStorage.id}/notes/`
 
@@ -56,6 +57,16 @@ const createNote = (e) => {
     e.target.reset()
     
 }
+const editNote = (note) => {
+ 
+  fetch(myNotesUrl + note.id, {
+    method: "PATCH", 
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${localStorage.token}`
+    }
+  })
+}
 
 const deleteMyNote = (note) => {
   // debugger
@@ -70,6 +81,10 @@ const deleteMyNote = (note) => {
   .then( res => res.json() )
   .then(setMyNotes(myNotes.filter(currentNotes => currentNotes !== note)))
 }
+
+
+  
+
 
 
 
@@ -119,8 +134,12 @@ const deleteMyNote = (note) => {
          <Button>Add My Note</Button>
 
        </Form>
-        <div>
-         {myNotes.map(noteObj => <NotesDetails noteObj={noteObj} deleteMyNote={deleteMyNote}  />)}
+       <br/>
+        <div className="ui four cards">
+         {myNotes.map(noteObj => <NotesDetails 
+                                  noteObj={noteObj} 
+                                  deleteMyNote={deleteMyNote} 
+                                  editNote={editNote} />)}
      </div>
         </div> );
 }

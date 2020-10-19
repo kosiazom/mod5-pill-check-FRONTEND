@@ -36,7 +36,8 @@ const NotesDetails = (props) => {
                                         onClick={(e) => props.deleteMyNote(props.noteObj)}>
                     <Icon name='remove' /> Delete
                     </Button>
-                    <Button color='green' onClick={() => setOpen(false)}>
+                    <Button color='green' onClick={() => setOpen(false)}
+                                          onClick={(e) => props.editNote(props.noteObj)}>
                     <Icon name='checkmark' /> Edit
                     </Button>
                 </Modal.Actions>
