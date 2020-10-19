@@ -1,22 +1,31 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import AsyncSelect from 'react-select/async'
 import {Button} from 'semantic-ui-react'
 import MyMedsCard from './MyMedsCard'
 import {Form} from 'semantic-ui-react'
 
 const MyMeds = (props) => {
-
-  const url = `http://localhost:3000/api/v1/user_medications`
+  
+  // /api/v1/user_medications(.:format)
+ const userMeds =`http://localhost:3000/api/v1/user_medications`
+  const url = `http://localhost:3000/api/v1/users/`
+  // /api/v1/users/:user_id/medications
 
     const [inputValue, setValue] = useState('');
   const [selectedValue, setSelectedValue] = useState(null);
   const [med, setMed] = useState([])
  
 
-  const pickMeds = (e) => {
-    //  console.dir(e)
-    setMed(selectedValue)
-  }
+  useEffect(() => {
+    fetch(url + localStorage.id, {
+        method: "GET",
+        headers: {
+          "Authorization": `Bearer ${localStorage.token}`
+        }
+    }) 
+    .then(res => res.json() )
+    .then(userMeds => setMed(userMeds.medications))
+  }, [])
   // handle input change event
   const handleInputChange = value => {
     setValue(value);
@@ -37,9 +46,7 @@ const MyMeds = (props) => {
   const createMyMeds = (e) => {
     e.preventDefault()
 
-    // debugger
-
-    fetch(url, {
+    fetch(userMeds, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -50,12 +57,13 @@ const MyMeds = (props) => {
         // drug_class: selectedValue.drug_class,
         // side_effects: selectedValue.side_effects,
         // indication: selectedValue.indication,
-        // image: selectedValue.image
+        // image: selectedValue.image,
         user_id: localStorage.id,
         medication_id: selectedValue.id
       })
     })
     .then(res => res.json())
+    // .then(myDrug => setMed([...med, myDrug]))
     .then(selectedValue =>setMed([...med, selectedValue]))
   } 
  
@@ -76,14 +84,13 @@ const MyMeds = (props) => {
         
       />
       {/* <pre>Selected Value: {JSON.stringify(selectedValue, null, 2)}</pre> */}
-      <Button onClick={(e) =>pickMeds(e)}>Add Medication</Button><br/>
+      <Button >Add Medication</Button><br/>
       </Form>
 
        <div>
-      <MyMedsCard med={med}/>
+       {med.map(medObj => <MyMedsCard medObj={medObj} />)}
       </div>
-
-
+     
         </div>
     )
 }
