@@ -122,8 +122,8 @@ handleLogin = (e) => {
     <Route exact path="/" component={Home} />
 
   <Route path="/login" render={(routerProps) =>   <LoginForm {...routerProps} 
-  handleLogin={this.handleLogin} 
-  handleOnChange={this.handleOnChange}/> }/>
+                                                  handleLogin={this.handleLogin} 
+                                                  handleOnChange={this.handleOnChange}/> }/>
  
   <Route path="/create-user-profile" render={(routerProps) => <CreateProfile {...routerProps}/>}/>
   <Route path="/questions" render={(routerProps) => <QuestionnaireForm {...routerProps} />} />

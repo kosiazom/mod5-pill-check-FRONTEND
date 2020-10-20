@@ -6,7 +6,7 @@ const HTNCard = (props) => {
         <div>
             <Card.Group>
                 <Card
-                color='green'
+                
                image={props.htnMed.image}
                header={props.htnMed.name}
                />

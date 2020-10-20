@@ -1,14 +1,14 @@
 .sidenav {
     
-    width: 160x;
+    width: 170px;
     position: fixed;
-    z-index: 10;
+    z-index: 1;
     top: auto;
     left: 10px;
     background-color: whitesmoke;
     overflow-x: hidden;
     padding-top: 20px;
-    border: 1px;
+    border: 10px;
 }
 
 .sidenav a {
@@ -17,10 +17,12 @@
     font-size: 25px;
     color: #302d2d;
     display: block;
+    cursor: pointer;
 }
 
 sidenav a:hover {
     color: #f1f1f1;
+    
 }
 
 @media screen and (max-height: 450px) {

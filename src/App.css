@@ -69,9 +69,14 @@
   background: #e0d5db;
 }
 
-
+.ui.cards {
+  /* display: flex;
+  margin: -.875em -.5em;
+  flex-wrap: wrap; */
+  height: 100%;
+}
 .home-picture {
-  background-image: url("https://ak.picdn.net/shutterstock/videos/8025358/thumb/1.jpg");
+  background-image: url('images/background-image.png');
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;

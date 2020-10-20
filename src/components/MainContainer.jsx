@@ -57,7 +57,7 @@ class MainContainer extends Component {
         return ( 
         <div className='main-container' >
           
-           
+    
             <Sidebar userView={this.state.userView} 
             handleChange={this.handleChange}
             getMeds={this.getMeds}
