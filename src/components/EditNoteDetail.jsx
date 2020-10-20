@@ -6,17 +6,27 @@ import "react-datepicker/dist/react-datepicker.css"
 const EditNoteDetail = (props) => {
     let noteToEdit= props.location.noteToEdit
     console.log(props)
-    const [date, setDate] = useState( new Date() )
+    // const [date, setDate] = useState( new Date() )
 const [title, setTitle] = useState(noteToEdit.title)
 const [description, setDescription] = useState(noteToEdit.description)
 const [id, setID] = useState(noteToEdit.id)
+
+const handleClick = () =>{
+    props.history.push({
+        pathname:`/main-page`
+       })
+       
+}
+
     return (
         <div>
-            <Form onSubmit={(e) => props.editNote(e, id)}>
-         
+            <Form onSubmit={(e) =>{
+                handleClick()
+                props.editNote(e, id)}}>
+        
         <input type="hidden" id="id" value={id} />
          
-        <h4>Select Date</h4>
+        {/* <h4>Select Date</h4>
         <DatePicker
         label="Today's Date"
         selected={date} 
@@ -24,10 +34,8 @@ const [id, setID] = useState(noteToEdit.id)
         onChange={(e) => setDate(e.target.value)}
         value={date}
         
-        />
+        /> */}
         
-
-
         <Form.Input
         //  control={Input}
          label="Title"

@@ -36,8 +36,8 @@ const MyMedsCard = (props) => {
 // }
 return (
 
-    <Card>
-    <Image src={props.medObj.image} wrapped ui={false} />
+    <Card >
+    <Image src={props.medObj.image} wrapped ui={false} style={{height: "275px", width: "265px"}}/>
     <Card.Content>
       <Card.Header>{props.medObj.name}</Card.Header>
       <Card.Meta>
