@@ -1,10 +1,10 @@
 import React from 'react'
-import { Card, CardContent, Image } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 
 const DiabetesCard = (props) => {
     // console.log(props)
     return (
-        <div>
+      
          
             <Card>
             <Image src={props.dmMed.image} wrapped ui={false} style={{height: "275px", width: "265px"}}/>
@@ -19,7 +19,7 @@ const DiabetesCard = (props) => {
     </Card.Content>
             </Card>
             
-        </div>
+        
     )
 }
 

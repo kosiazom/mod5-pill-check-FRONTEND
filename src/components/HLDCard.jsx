@@ -4,9 +4,9 @@ import { Card, Image} from 'semantic-ui-react'
 const HLDCard = (props) => {
     return (
 
-        <div>
+        
            
-           <Card >
+           <Card style={{background: "red"}} >
                 <Image src={props.hldMed.image} wrapped ui={false} style={{height: "275px", width: "265px"}}/>
                 <Card.Content>
                 <Card.Header>{props.hldMed.name}</Card.Header>
@@ -15,7 +15,7 @@ const HLDCard = (props) => {
                 </Card.Content>
             
             </Card>
-         </div>
+    
     )
 }
 
