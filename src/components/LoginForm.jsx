@@ -18,7 +18,7 @@ class LoginForm extends Component {
     render() { 
         return ( 
         
-       
+            <div className="background-picture">
                 <div className="login-container">
             <div class="login-center">
                 <h1>Login</h1>
@@ -40,6 +40,7 @@ class LoginForm extends Component {
                 </form>
 
             </div>
+               </div>
                </div>
            
           

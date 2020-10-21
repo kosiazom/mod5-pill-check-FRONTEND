@@ -98,16 +98,15 @@ class CreateProfile extends Component {
 
 render(){
     return ( 
-<div></div>
+    <div className="background-picture">
 
-//  <Form onSubmit={(e) => {
+{/* /* //  
 //      this.handleSignIn()
 //      this.handleClick()
 //  }
 // }
 //  >
-//      <Form.Group >
-//         <Form.Field width={4}
+//      <
 //             label='First Name:'
 //             control={Input}
 //             name='firstName'
@@ -117,8 +116,8 @@ render(){
 //             onChange={this.handleFormChange}
 //          />
          
-//          <Form.Field width={4}
-//             label='Last Name:'
+//          <Form.Field width={4} */ }
+{/* //             label='Last Name:'
 //             control={Input}
 //             name='lastName'
 //             type='text' 
@@ -126,30 +125,30 @@ render(){
 //             value={this.state.last_name} 
 //             onChange={this.handleFormChange}
 //          />  
-//      </Form.Group>
+//      </Form.Group> */}
 
-//          <Form.Field width={4}
-//             label='Username:'
+{/* //          <Form.Field width={4} */}
+{/* //             label='Username:'
 //             control={Input}
 //             name='username'
 //             type='text' 
 //             placeholder="Enter username..." 
 //             value={this.state.username} 
 //             onChange={this.handleFormChange}
-//          />  
+//          />   */}
 
-//         <Form.Field width={4}
-//             label='Password:'
+{/* //         <Form.Field width={4} */}
+{/* //             label='Password:'
 //             control={Input}
 //             name='password'
 //             type='password' 
 //             placeholder="Enter Password..." 
 //             value={this.state.password} 
 //             onChange={this.handleFormChange}
-//          />  
+//          />   */}
 
-//         <Form.Field width={4}
-//             label='Email Address:'
+{/* //         <Form.Field width={4} */}
+{/* //             label='Email Address:'
 //             control={Input}
 //             name='email'
 //             type='text' 
@@ -161,8 +160,8 @@ render(){
 //             <div>{this.state.errorStatus}</div>
 //          <Button primary type="submit" >Click here to Register!</Button> 
 
-//  </Form>
-        // <div className="container">
+//  </Form> */}
+        {/* // <div className="container">
         //     <div className="text">
         // Responsive Contact us Form</div>
         // <form >
@@ -212,9 +211,9 @@ render(){
         //         </div>
         //         </div>
         //     </form>
-        //     </div>
+        //     </div> */}
 
-        
+        </div>
     );
         }
 

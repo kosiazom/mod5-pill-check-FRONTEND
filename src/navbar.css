@@ -12,10 +12,23 @@
     color: whitesmoke;
     text-decoration: none;
     font-size: 20px;
+    
   }
   
   .navbar a:hover {
     background-color: #000;
+  }
+
+  .logo {
+    float: left;
+    margin-left: 1px;
+  }
+   
+  .logo img{
+    width: 150px;
+    height: 50%
+    /* margin-top: 15px;
+    margin-left: 10px; */
   }
   
   .active {

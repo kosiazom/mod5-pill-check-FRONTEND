@@ -78,7 +78,7 @@ class QuestionnaireForm extends Component {
     
     render() {
         return (
-            <div>
+            <div className="background-picture">
                 <h1>Hello, {this.state.currentUser} Welcome to PillCheck!!</h1>
                 <h3>Please Fill Out the Form below</h3>
                 <h3>Disease State Form</h3>

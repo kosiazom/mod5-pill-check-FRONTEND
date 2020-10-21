@@ -1,6 +1,5 @@
 import React from 'react'
-import Head from './Head'
-import Footer from './Footer'
+
 
 const Home = () => {
     return (

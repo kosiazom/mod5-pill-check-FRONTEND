@@ -30,7 +30,7 @@ const NavBar = () => {
         // </>
 <>
         <div class="navbar">
-  <div className="logo"><a href="#"><img src="images"</a></div>
+  <div className="logo"><a href="#"><img src={require(`../images/pillnote-4.png`)}/></a></div>
   <Link to='/login'><i class="fa fa-fw fa-user"></i> Login</Link>   
         </div>
 

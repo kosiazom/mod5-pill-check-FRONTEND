@@ -84,6 +84,16 @@
   position: relative;
   top: -15px;
 }
+
+.background-picture{
+  background-image: url("images/login-background.png");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  top: -15px;
+}
 .ui.form {
   position: relative;
   max-width: 100%;
