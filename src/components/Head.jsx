@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header} from 'semantic-ui-react'
+
 import  NavBar  from './NavBar'
 import "../Header.css"
 
@@ -11,10 +11,11 @@ import "../Header.css"
 const Head = (props) => {
 console.log(props)
     return (
-        <Header as='h4' block={'boolean'} size={'small'} color={'olive'} dividing={'bool'}>
+        // <Header as='h4' block={'boolean'} size={'small'} color={'olive'} dividing={'bool'}>
+        <div>
            <NavBar/>
            Welcome to PillCheck!
-        </Header>
+           </div>
     )
 }
 

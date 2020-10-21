@@ -1,5 +1,5 @@
 import React from 'react';
-import Head from './components/Head'
+import NavBar from './components/NavBar'
 import LoginForm from './components/LoginForm'
 import Footer from './components/Footer'
 import CreateProfile from './components/CreateProfile';
@@ -117,7 +117,7 @@ handleLogin = (e) => {
   return (
     <BrowserRouter >
     
-    <Head/>
+    <NavBar/>
      {/* <Switch > */}
     <Route exact path="/" component={Home} />
 

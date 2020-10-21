@@ -7,7 +7,7 @@ import {Form} from 'semantic-ui-react'
 const MyMeds = (props) => {
   
   // /api/v1/user_medications(.:format)
- const userMeds =`http://localhost:3000/api/v1/user_medications`
+ const userMeds =`http://localhost:3000/api/v1/user_medications/`
   const url = `http://localhost:3000/api/v1/users/`
   // /api/v1/users/:user_id/medications
 
@@ -66,10 +66,25 @@ const MyMeds = (props) => {
     // .then(myDrug => setMed([...med, myDrug]))
     .then(selectedValue =>setMed([...med, selectedValue]))
   } 
+
+  // const deleteMyMed = (drugId) => {
+  //   // debugger
+
+  //   fetch(userMeds + `${localStorage.id}`, {
+  //     method: "DELETE",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       "Authorization": `Bearer ${localStorage.token}`
+  //     }
+  //     .then(res => res.json())
+  //     .then(setMed(med.filter(myMedIds => myMedIds !== drugId)))
+  //   })
+   
+  // }
  
     return (
         <div>
-            {/* <pre>Input Value: "{inputValue}"</pre> */}
+           <h2 className="add-new-medication">New Medication</h2>
             <Form onSubmit={(e) => createMyMeds(e)}>
       <AsyncSelect 
         cacheOptions
@@ -85,10 +100,10 @@ const MyMeds = (props) => {
       />
       {/* <pre>Selected Value: {JSON.stringify(selectedValue, null, 2)}</pre> */}
       <Button >Add Medication</Button><br/>
-      </Form>
+      </Form><br></br><br></br><br></br><br></br>
 
       <div className="ui four cards">
-       {med.map(medObj => <MyMedsCard medObj={medObj} />)}
+       {med.map(medObj => <MyMedsCard medObj={medObj}/>)}
        </div>
      
         </div>

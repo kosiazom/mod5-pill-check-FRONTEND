@@ -76,7 +76,7 @@
   height: 100%;
 }
 .home-picture {
-  background-image: url('images/background-image.png');
+  background-image: url("images/pillNotes.png");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
