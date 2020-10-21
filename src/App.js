@@ -123,7 +123,9 @@ handleLogin = (e) => {
 
   <Route path="/login" render={(routerProps) =>   <LoginForm {...routerProps} 
                                                   handleLogin={this.handleLogin} 
-                                                  handleOnChange={this.handleOnChange}/> }/>
+                                                  handleOnChange={this.handleOnChange}
+                                                  username={this.state.username}
+                                                  password={this.state.password}/>}/>
  
   <Route path="/create-user-profile" render={(routerProps) => <CreateProfile {...routerProps}/>}/>
   <Route path="/questions" render={(routerProps) => <QuestionnaireForm {...routerProps} />} />
