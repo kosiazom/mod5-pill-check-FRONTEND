@@ -10,7 +10,7 @@ const NavBar = () => {
      localStorage.clear()
  }
     return(
-        // <>
+         
         // <Menu secondary>
 
         // <Menu.Item>
@@ -28,13 +28,13 @@ const NavBar = () => {
         // </Menu>
 
         // </>
-
+<>
         <div class="navbar">
-  
-  <Link to='/login'><i class="fa fa-fw fa-user"></i> Login</Link>
-</div>
+  <div className="logo"><a href="#"><img src="images"</a></div>
+  <Link to='/login'><i class="fa fa-fw fa-user"></i> Login</Link>   
+        </div>
 
-
+ </>
     )
 }
 

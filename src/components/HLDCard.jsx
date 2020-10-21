@@ -7,7 +7,7 @@ const HLDCard = (props) => {
     return (
 
            
-           <Card  >
+        <Card  >
                 <Image src={props.hldMed.image} wrapped ui={false} style={{height: "275px", width: "265px"}}/>
                 <Card.Content>
                 <Card.Header>{props.hldMed.name}</Card.Header>
@@ -31,9 +31,9 @@ const HLDCard = (props) => {
                     <Modal.Actions>
                         
                     </Modal.Actions>
-    </Modal>
+                 </Modal>
             
-            </Card>
+        </Card>
     
     )
 }

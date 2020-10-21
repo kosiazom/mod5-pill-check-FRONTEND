@@ -94,10 +94,6 @@ const deleteMyNote = (note) => {
 
   
 
-
-
-
-
     return (
          <div>
        <Form onSubmit={(e) => createNote(e)}>
@@ -119,8 +115,6 @@ const deleteMyNote = (note) => {
         
         />
         
-
-
         <Form.Field
          control={Input}
          label="Title"

@@ -10,9 +10,9 @@ const Diabetes = (props) => {
      setshowMeds(true)
  }
 
- const toggleButton = () => {
-     setshowMeds(false)
- }
+//  const toggleButton = () => {
+//      setshowMeds(false)
+//  }
 
 return (
         
@@ -40,5 +40,5 @@ return (
        
         </div>
     )
-}//in the parent put the grid here
+}
 export default Diabetes
