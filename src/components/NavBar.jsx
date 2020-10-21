@@ -31,7 +31,7 @@ const NavBar = () => {
 
         <div class="navbar">
   
-  <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+  <Link to='/login'><i class="fa fa-fw fa-user"></i> Login</Link>
 </div>
 
 

@@ -1,5 +1,5 @@
 
-.home-picture {
+/* .home-picture {
     background-image: url("https://ak.picdn.net/shutterstock/videos/8025358/thumb/1.jpg");
     height: 100vh;
     background-position: center;
@@ -7,9 +7,33 @@
     background-size: cover;
     position: relative;
     top: -15px;
+  } */
+  body{
+    margin:0;
+    padding: 0;
+    font-family: montserrat;
+    height: 100vh;
+    overflow: hidden;
   }
-  
-  .footer {
-      position: relative;
-      top: -10px
+  .login-container{
+    height: 1500px;
+  }
+  .login-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: whitesmoke;
+    border-radius: 10px;
+  }
+
+  .login-center h1{
+    text-align: center;
+    padding: 0 0 30px 0;
+  }
+
+  .login-center form {
+    padding: 0 40px;
+    box-sizing: border-box;
   }

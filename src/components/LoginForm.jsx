@@ -22,16 +22,16 @@ class LoginForm extends Component {
 
     render() { 
         return ( 
-            <div>
         
-            <div className="home-picture">
-        <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+       
+          
+        /* /* <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
             <Grid.Column style={{ maxWidth: 450 }}>
             <Header as='h2' color='olive' textAlign='center'>
-                <Image src={require("../images/pillcheck-logo.png")}/> Log-in to your account
-            </Header>
+                
+            </Header> */
 
-            <Form size='large' onSubmit={(e) =>{
+            /* <Form size='large' onSubmit={(e) =>{
                 this.handleClick()
                 this.props.handleLogin(e) }} >
                 <Segment stacked>
@@ -41,33 +41,33 @@ class LoginForm extends Component {
                 iconPosition='left' 
                 name='username'
                 placeholder='Username' 
-                type='text'
+                // type='text' */ 
                 // value={this.state.username} 
                 // onChange={this.handleOnChange}
-                />
+              
 
-                <Form.Input
+                 /* /* <Form.Input
                     fluid
                     icon='lock'
                     iconPosition='left'
                     name='password'
                     placeholder='Password'
                     type='password'
-                    // value={this.state.password} 
-                    // onChange={this.handleOnChange}
-                />
+                    value={this.state.password} 
+                     onChange={this.handleOnChange}
+                */
 
-                <Button color='olive' fluid size='large' >
+                /* <Button color='olive' fluid size='large' >
                     Login
                 </Button>
                 </Segment>
             </Form>
             <Message>
-                New to Pillcheck? <Link to='/create-user-profile'>Create an account!</Link>
+                New to PillNotes? <Link to='/create-user-profile'>Create an account!</Link>
             </Message>
             </Grid.Column>
-        </Grid>
-                {/* <h3>Please Log in!</h3>
+        </Grid> */ 
+                /* <h3>Please Log in!</h3>
                 <Form onSubmit={(e) => this.handleLogin(e)} >
                     <Form.Field width={4} >
                         <label>Username</label>
@@ -81,12 +81,27 @@ class LoginForm extends Component {
                     <Button primary type="submit">Log In</Button>
                 </Form>
                 <br />
-                <Link to='/create-user-profile'><p>Not a user? Create an account!</p></Link> */}
-                
-            </div>
-               
+                <Link to='/create-user-profile'><p>Not a user? Create an account!</p></Link> */
+                <div className="login-conainter">
+            <div class="login-center">
+                <h1>Login</h1>
+                <form>
+                    <div className="txt_field">
+                        <label>Username</label>
+                        <input type="text" required placeholder="Username" />
+                    </div>
+                    <div className="txt_field">
+                        <label>Password</label>
+                        <input type="password" required placeholder="Password"/>
+                        <input type="submit" value="Login" />
+                    </div>
+                    <div className="signup_link">New to PillNotes? <Link to='/create-user-profile'>Register Here!!</Link> </div>
+                </form>
 
             </div>
+               </div>
+           
+          
          );
     }
 }
