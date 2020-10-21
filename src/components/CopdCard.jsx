@@ -1,12 +1,14 @@
-import React from 'react'
-import { Card, Image } from 'semantic-ui-react'
+import React, {useState} from 'react'
+import { Card, Button, Header, Image, Modal } from 'semantic-ui-react'
 
 
 
 const CopdCard = (props) => {
-    // console.log(props)
+  const [open, setOpen] = React.useState(false)
+
+
+
     return (
-        
         
        
         <Card >
@@ -20,7 +22,25 @@ const CopdCard = (props) => {
              {null}
           </Card.Description>
         </Card.Content>
-       
+       <Modal
+      onClose={() => setOpen(false)}
+      onOpen={() => setOpen(true)}
+      open={open}
+      trigger={<Button color="black">More Details</Button>}
+    >
+      <Modal.Header>{props.copdMed.name}</Modal.Header>
+      <Modal.Content image>
+        <Image size='medium' src={props.copdMed.image} wrapped />
+        <Modal.Description>
+          <Header>Indication: {props.copdMed.indication}</Header>
+          <h4>Side Effects: {props.copdMed.side_effects}</h4>
+          <h4>Drug Class: {props.copdMed.drug_class}</h4>
+        </Modal.Description>
+      </Modal.Content>
+      <Modal.Actions>
+        
+      </Modal.Actions>
+    </Modal>
       </Card>
                 
                 

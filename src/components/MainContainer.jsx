@@ -63,7 +63,7 @@ class MainContainer extends Component {
             getMeds={this.getMeds}
             />
 
-        <div> Hi {localStorage.username}</div>
+        <div className='welcome-user'><h1>Welcome {localStorage.username}!</h1></div>
             <UserHome userView={this.state.userView} 
             handleChange={this.handleChange} 
             displayMedications={this.state.displayMedications}

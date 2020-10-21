@@ -34,7 +34,7 @@ class LoginForm extends Component {
                         {/* <label>Password</label> */}
                         <input type="password" name="password" required  placeholder="Password..."value={this.props.password} onChange={this.props.handleOnChange}/>
                         <span></span>
-                    </div> <br></br><br></br>
+                    </div> <br></br><br></br><br></br><br></br>
                     <input type="submit" value="Login" />
                     <div className="signup_link">New to PillNotes? <Link to='/create-user-profile'>Register Here!!</Link> </div>
                 </form>

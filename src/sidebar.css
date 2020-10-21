@@ -1,12 +1,12 @@
 .sidenav {
     
-    width: 170px;
-    position: fixed;
+    width: 2000px;
+    position: absolute;
     z-index: 1;
     top: auto;
     left: 10px;
-    background-color: whitesmoke;
-    overflow-x: hidden;
+    /* background-color: whitesmoke; */
+    /* overflow-x: hidden; */
     padding-top: 20px;
     border: 10px;
 }
@@ -15,6 +15,7 @@
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 25px;
+    font-weight: bolder;
     color: #302d2d;
     display: block;
     cursor: pointer;

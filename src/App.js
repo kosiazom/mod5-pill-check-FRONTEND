@@ -118,7 +118,7 @@ handleLogin = (e) => {
     <BrowserRouter >
     
     <NavBar/>
-     {/* <Switch > */}
+    
     <Route exact path="/" component={Home} />
 
   <Route path="/login" render={(routerProps) =>   <LoginForm {...routerProps} 
@@ -133,8 +133,7 @@ handleLogin = (e) => {
   <Route path="/main-page" render={(routerProps) => <MainContainer currentUser={this.state.currentUser}/>} />
   <Route exact path="/edit-note" render={(routerProps) => <EditNoteDetail editNote={this.editNote} {...routerProps} />} />
 
-{/* 
-      </Switch> */}
+
 
     <Footer />
     </BrowserRouter>

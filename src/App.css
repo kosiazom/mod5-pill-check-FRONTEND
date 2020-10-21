@@ -84,6 +84,15 @@
   position: relative;
   top: -15px;
 }
+.ui.form {
+  position: relative;
+  max-width: 100%;
+  width: 50%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 300px;
+  height: 1200px;
+}
  
 body {
   height: -500px;
