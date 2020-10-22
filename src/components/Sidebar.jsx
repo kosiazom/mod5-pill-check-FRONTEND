@@ -37,7 +37,7 @@ const SideBar = (props) => {
                 props.getMeds(e)}}>High Cholesterol</a><br/>
             <a name="notes" onClick={(e) => props.handleChange(e)}>My Notes</a><br/>
             
-            <NavLink style={{background: "#e0d5db"}}to='/'>
+            <NavLink style={{background: "#000"}}to='/'>
             <a onClick={() => logout()}>LogOut</a>
                 
             </NavLink>

@@ -141,12 +141,12 @@ p, li {
 } 
 
 .edit-note{
-  height: 3200px
+  height: 2500px
 }
 .ui.header{
   justify-content: center;
     text-align: center;
-    font-size: 3.2em;
+    font-size: 4.2rem;
 }
 
 .ui.form .field {
@@ -154,7 +154,9 @@ p, li {
   margin: 0 0 1em;
   text-align: center;
 }
-
+.ui.header:first-child {
+  margin-top: 1.857143em;
+}
 .ui.button {
   
   cursor: pointer;
