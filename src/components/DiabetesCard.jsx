@@ -21,7 +21,7 @@ const DiabetesCard = (props) => {
                     onClose={() => setOpen(false)}
                     onOpen={() => setOpen(true)}
                     open={open}
-                    trigger={<Button color="black">More Details</Button>}
+                    trigger={<Button style={{background: "whitesmoke"}}>More Details</Button>}
                     >
                     <Modal.Header>{props.dmMed.name}</Modal.Header>
                     <Modal.Content image>
