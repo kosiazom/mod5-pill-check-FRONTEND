@@ -96,6 +96,7 @@ const deleteMyNote = (note) => {
 
     return (
          <div>
+           <h1>Add A Note</h1>
        <Form onSubmit={(e) => createNote(e)}>
          {/* <Form.Field 
          control={Input}

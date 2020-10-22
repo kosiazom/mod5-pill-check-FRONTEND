@@ -15,7 +15,7 @@ const Footer = () => {
 
                 </div>
                 <div>
-                    <a href="https://medium.com/@kosiazom" class="foot-tag"><h4>© PillCheck est. 2020, created by Kosi Akporji </h4></a>
+                    <a href="https://medium.com/@kosiazom" class="foot-tag"><h4>© PillNotes est. 2020, created by Kosi Akporji </h4></a>
                 </div>
            </div>
         </div>  );

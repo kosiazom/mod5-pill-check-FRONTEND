@@ -100,10 +100,11 @@
   width: 50%;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 300px;
+  margin-left: 400px;
   border: 2px solid;
   border-radius: 10px; 
   background-color: #b4b5a6;
+  justify-content: center;
 }
 .semantic-button {
   background-color: whitesmoke;
@@ -121,4 +122,6 @@ div.ui.input {
 }
 body {
   height: -500px;
+
 }
+

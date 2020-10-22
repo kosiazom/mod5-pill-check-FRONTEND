@@ -29,7 +29,7 @@ const NavBar = () => {
 <>
         <div class="navbar">
   <div className="logo"><a href="#"><img src={require(`../images/pillnote-4.png`)}/></a></div>
-  {localStorage.token ? null :  <Link to='/login'><i class="fa fa-fw fa-user"></i> Login</Link> }
+    <Link to='/login'><i class="fa fa-fw fa-user"></i> Login</Link> 
    
         </div>
 

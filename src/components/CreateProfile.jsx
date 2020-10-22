@@ -1,6 +1,7 @@
 import React, {Component } from 'react';
 import { Form, Button, Input, Header} from 'semantic-ui-react'
 import QuestionnaireForm from './QuestionnaireForm'
+import '../profile.css'
 
 const userURL = "http://localhost:3000/api/v1/users"
 
@@ -99,48 +100,52 @@ class CreateProfile extends Component {
 render(){
     return ( 
     
-
+<>
         
         <div className="background-picture">
-        <div className="container">
-            <div className="text">Create a Profile</div>
+           
+                <div className="container">
+                  <div className="form-center">
+            <h1>Create Your Profile</h1>
             <form onSubmit={() =>{ this.handleSignIn()
                                   this.handleClick()}}>
                 <div className="form-row">
                     <div className="input-data">
-                        <input type="text" name="firstName" value={this.state.first_name} onChange={this.handleFormChange}/>
-                        <label>First Name</label>
+                        <input type="text" required name="firstName" value={this.state.first_name} onChange={this.handleFormChange} placeholder="First Name" />
+                        <div className="underline"></div>
                     </div>
                     <div className="input-data">
-                        <input type="text" name="lastName" value={this.state.last_name} onChange={this.handleFormChange}/>
-                        <label>Last Name</label>
+                        <input type="text" required name="lastName" value={this.state.last_name} onChange={this.handleFormChange} placeholder="Last Name"/>
+                        <div className="underline"></div>
                     </div>
                 </div>
                 <div className="form-row">
                     <div className="input-data">
-                        <input type="text" name="username" value={this.state.username} onChange={this.handleFormChange}/>
-                        <label>Username</label>
+                        <input type="text"  required name="username" value={this.state.username} onChange={this.handleFormChange} placeholder="Username"/>
+                        <div className="underline"></div>
                     </div>
                     <div className="input-data">
-                        <input type="password" name="password" value={this.state.password} onChange={this.handleFormChange}/>
-                        <label>Password</label>
+                        <input type="password"  required name="password" value={this.state.password} onChange={this.handleFormChange} placeholder="Password"/>
+                        <div className="underline"></div>
                     </div>
                 </div>
                 <div className="form-row">
                     <div className="input-data">
-                        <input type="text" name="email" value={this.state.email} onChange={this.handleFormChange}/>
-                        <label>Email Address</label>
+                        <input type="text"  required name="email" value={this.state.email} onChange={this.handleFormChange} placeholder="Enter Email Address..."/>
+                        <div className="underline"></div>
                     </div>
                 </div>
-
+                <Button type="submit" style={{background: "#b4b596"}}>Click here to Register!</Button> 
                 
             </form>
-
+            </div>
         </div>
-
         </div>
+        </>
     );
         }
 
     }
 export default CreateProfile;
+
+{/*  */}
