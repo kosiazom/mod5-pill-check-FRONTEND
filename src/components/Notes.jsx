@@ -5,8 +5,6 @@ import "react-datepicker/dist/react-datepicker.css"
 import NotesDetails from './NotesDetails';
 
 
-
-
 // const notesUrl = 'http://localhost:3000/api/v1/notes'
 const myNotesUrl = `http://localhost:3000/api/v1/users/${localStorage.id}/notes/`
 
@@ -16,10 +14,9 @@ const Notes = (props) => {
 const [date, setDate] = useState( new Date() )
 const [title, setTitle] = useState("")
 const [description, setDescription] = useState("")
-const [update, setupdate] = useState(false);
-
-
 const [myNotes, setMyNotes] = useState([])
+const [addNote, setaddNote] = useState(false)
+const [showNotes, setshowNotes] = useState(false)
 
 
 useEffect(() => {
@@ -91,21 +88,20 @@ const deleteMyNote = (note) => {
   .then(setMyNotes(myNotes.filter(currentNotes => currentNotes !== note)))
 }
 
-
+const revealNotes = () => {
+  setshowNotes(true)
+}
   
+const addNoteForm = () => {
+  setaddNote(true)
+}
 
     return (
          <div>
-           <h1>Add A Note</h1>
+           <h1 onClick={(e) => addNoteForm(e)}>Add A Note</h1> 
+
+      {addNote ? 
        <Form onSubmit={(e) => createNote(e)}>
-         {/* <Form.Field 
-         control={Input}
-         label="Date"
-         name="date"
-         value={date}
-         type="text"
-         onchange={null}
-         /> */}
         <div><h4>Select Date</h4></div>
         <DatePicker
         label="Today's Date"
@@ -136,15 +132,20 @@ const deleteMyNote = (note) => {
          onChange={e => setDescription(e.target.value)}
          />
          <Button>Add My Note</Button>
+       </Form> : null}
 
-       </Form>
+
        <br/>
+       <h1 className="hover" onClick={(e) => revealNotes(e)}>View My Notes</h1>
+
+        {showNotes ?
         <div className="ui four cards">
          {myNotes.map(noteObj => <NotesDetails 
                                   noteObj={noteObj} 
                                   deleteMyNote={deleteMyNote} 
                                   editNote={editNote} />)}
-     </div>
+     </div> : null}
+
         </div> );
 }
  

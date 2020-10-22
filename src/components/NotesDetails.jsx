@@ -21,7 +21,7 @@ const NotesDetails = (props) => {
                 <Modal
                 closeIcon
                 open={open}
-                trigger={<Button>View Note</Button>}
+                trigger={<Button style={{background: "transparent"}}>View Note</Button>}
                 onClose={() => setOpen(false)}
                 onOpen={() => setOpen(true)}
                 >
