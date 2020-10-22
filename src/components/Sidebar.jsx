@@ -1,9 +1,21 @@
 import React, { Component } from 'react';
 import {Button, List } from 'semantic-ui-react';
+import {NavLink} from 'react-router-dom'
 import '../sidebar.css'
 
 const SideBar = (props) => {
+
+    let logout = () => {
+        localStorage.clear()
+        
+    }
     
+    // const handleRedirect = () => {
+    //     debugger
+    //     // props.history.push({
+    //     //     pathname: "/"
+    //     //    })
+    // }
     return (  
 
         <div className='sidenav'>
@@ -24,7 +36,14 @@ const SideBar = (props) => {
                 props.handleChange(e)
                 props.getMeds(e)}}>High Cholesterol</a><br/>
             <a name="notes" onClick={(e) => props.handleChange(e)}>My Notes</a><br/>
+            
+            <NavLink style={{background: "#e0d5db"}}to='/'>
+            <a onClick={() => logout()}>LogOut</a>
                 
+            </NavLink>
+
+
+            
 
        
         </div>

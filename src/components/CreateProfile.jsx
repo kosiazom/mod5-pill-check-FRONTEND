@@ -98,120 +98,45 @@ class CreateProfile extends Component {
 
 render(){
     return ( 
-    <div className="background-picture">
+    
 
-{/* /* //  
-//      this.handleSignIn()
-//      this.handleClick()
-//  }
-// }
-//  >
-//      <
-//             label='First Name:'
-//             control={Input}
-//             name='firstName'
-//             type='text' 
-//             placeholder="First name..." 
-//             value={this.state.first_name} 
-//             onChange={this.handleFormChange}
-//          />
-         
-//          <Form.Field width={4} */ }
-{/* //             label='Last Name:'
-//             control={Input}
-//             name='lastName'
-//             type='text' 
-//             placeholder="Last name..." 
-//             value={this.state.last_name} 
-//             onChange={this.handleFormChange}
-//          />  
-//      </Form.Group> */}
-
-{/* //          <Form.Field width={4} */}
-{/* //             label='Username:'
-//             control={Input}
-//             name='username'
-//             type='text' 
-//             placeholder="Enter username..." 
-//             value={this.state.username} 
-//             onChange={this.handleFormChange}
-//          />   */}
-
-{/* //         <Form.Field width={4} */}
-{/* //             label='Password:'
-//             control={Input}
-//             name='password'
-//             type='password' 
-//             placeholder="Enter Password..." 
-//             value={this.state.password} 
-//             onChange={this.handleFormChange}
-//          />   */}
-
-{/* //         <Form.Field width={4} */}
-{/* //             label='Email Address:'
-//             control={Input}
-//             name='email'
-//             type='text' 
-//             placeholder="Enter email address..." 
-//             value={this.state.email} 
-//             onChange={this.handleFormChange}
-//          /> 
-  
-//             <div>{this.state.errorStatus}</div>
-//          <Button primary type="submit" >Click here to Register!</Button> 
-
-//  </Form> */}
-        {/* // <div className="container">
-        //     <div className="text">
-        // Responsive Contact us Form</div>
-        // <form >
-        //         <div className="form-row">
-        //         <div className="input-data">
-        //             <input type="text" required>
-        //             <div className="underline">
-        // </div>
-        // <label for="">First Name</label>
-        //         </div>
-        // <div className="input-data">
-        //             <input type="text" required>
-        //             <div className="underline">
-        // </div>
-        // <label for="">Last Name</label>
-        //         </div>
-        // </div>
-        // <div className="form-row">
-        //         <div className="input-data">
-        //             <input type="text" required>
-        //             <div className="underline">
-        // </div>
-        // <label for="">Email Address</label>
-        //         </div>
-        // <div className="input-data">
-        //             <input type="text" required>
-        //             <div className="underline">
-        // </div>
-        // <label for="">Website Name</label>
-        //         </div>
-        // </div>
-        // <div className="form-row">
-        //         <div className="input-data textarea">
         
-        //             <textarea rows="8" cols="80" required></textarea> 
-        //             <br />
-        // <div className="underline">
-        // </div>
-        // <label for="">Write your message</label>
+        <div className="background-picture">
+        <div className="container">
+            <div className="text">Create a Profile</div>
+            <form onSubmit={() =>{ this.handleSignIn()
+                                  this.handleClick()}}>
+                <div className="form-row">
+                    <div className="input-data">
+                        <input type="text" name="firstName" value={this.state.first_name} onChange={this.handleFormChange}/>
+                        <label>First Name</label>
+                    </div>
+                    <div className="input-data">
+                        <input type="text" name="lastName" value={this.state.last_name} onChange={this.handleFormChange}/>
+                        <label>Last Name</label>
+                    </div>
+                </div>
+                <div className="form-row">
+                    <div className="input-data">
+                        <input type="text" name="username" value={this.state.username} onChange={this.handleFormChange}/>
+                        <label>Username</label>
+                    </div>
+                    <div className="input-data">
+                        <input type="password" name="password" value={this.state.password} onChange={this.handleFormChange}/>
+                        <label>Password</label>
+                    </div>
+                </div>
+                <div className="form-row">
+                    <div className="input-data">
+                        <input type="text" name="email" value={this.state.email} onChange={this.handleFormChange}/>
+                        <label>Email Address</label>
+                    </div>
+                </div>
+
                 
-                
-        //         <br />
-        // <div className="form-row submit-btn">
-        //         <div className="input-data">
-        //             <div className="inner"></div>
-        //             <input type="submit" value="submit">
-        //         </div>
-        //         </div>
-        //     </form>
-        //     </div> */}
+            </form>
+
+        </div>
 
         </div>
     );

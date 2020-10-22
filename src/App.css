@@ -66,7 +66,7 @@
   margin-left: .75em;
   margin-right: .75em;
   border: 1px solid;
-  background: #e0d5db;
+  background: whitesmoke;
 }
 
 .ui.cards {
@@ -105,7 +105,9 @@
   border-radius: 10px; 
   background-color: #b4b5a6;
 }
-
+.semantic-button {
+  background-color: whitesmoke;
+}
 .ui.form textarea {
   width: 70%;
 }

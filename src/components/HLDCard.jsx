@@ -4,10 +4,10 @@ import { Card, Button, Header, Image, Modal } from 'semantic-ui-react'
 const HLDCard = (props) => {
 
     const [open, setOpen] = React.useState(false)
-    return (
 
-           
-        <Card  >
+
+    return (
+        <Card>
                 <Image src={props.hldMed.image} wrapped ui={false} style={{height: "275px", width: "265px"}}/>
                 <Card.Content>
                 <Card.Header>{props.hldMed.name}</Card.Header>

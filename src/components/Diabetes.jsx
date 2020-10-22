@@ -29,9 +29,10 @@ return (
                <li>Maintain a healthy weight.</li>
                <li>Be more active, try to exercise about 3 times a week.</li>
                <li>Have a healthy balanced diet.</li>
-         </div>
-    <Button onClick={(e) => revealMeds(e)}>View Common Medications Used for Diabetes</Button><br></br><br></br><br></br>
-
+         </div><br></br><br></br><br></br>
+         
+        <Button style={{background: "#b4b5a6"}} onClick={(e) => revealMeds(e)}>Common Medications Used for Diabetes</Button><br></br><br></br><br></br>
+        
        {showMeds ? 
         <div className="ui four cards">
         {props.displayMedications.map(dmMed =>  <DiabetesCard dmMed={dmMed} key={dmMed.id}/>)}

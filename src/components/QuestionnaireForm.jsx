@@ -84,8 +84,7 @@ class QuestionnaireForm extends Component {
                 <h3>Disease State Form</h3>
                 <Form onSubmit={(e) => {
                     this.handleSubmitForm(e)
-                    // this.handleRedirect(e)}}>
-                }}>
+                    this.handleRedirect(e)}}>
         
             <div className="question-column">
                         <label>Do you have COPD?</label>
