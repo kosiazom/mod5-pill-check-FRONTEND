@@ -128,6 +128,10 @@ p, li {
   font-size: 20px;
 }
 
+.ui.modal>.content>.description {
+  font-size: 40px;
+}
+
 .ui.card>.content, .ui.cards>.card>.content.note-card{
 
   font-family: "Comic Sans MS", cursive, sans-serif;

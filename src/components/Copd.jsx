@@ -21,8 +21,12 @@ const Copd = (props) => {
          <img src="https://www.ruralhealthinfo.org/rural-monitor/wp-content/uploads/2019/11/copd-graphic-large.jpg" />
          <div>
          <h2>Best ways to manage Chronic Obstructive Pulmonary Disease: </h2>
+                <li>Quit Smoking</li>
+                <li>Physical exercise if you can</li>
+                <li>Be sure to get your vaccinations(Influenza and Pneumococcal)</li>
          </div><br></br><br></br><br></br>
         
+         <h3><a href="https://www.cdc.gov/copd/index.html" target="_blank">Click here to learn more</a></h3><br></br><br></br><br></br>
 
          <Button style={{background: "#b4b5a6"}} onClick={(e) => revealMeds(e)}>Common Medications Used for COPD</Button><br></br><br></br><br></br>
 

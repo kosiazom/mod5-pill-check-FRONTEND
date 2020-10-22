@@ -17,7 +17,7 @@ const Hyperlipidemia = (props) => {
 
                 <p>Hyperlipidemia is a condition where you have high levels of fat particles in the blood.</p><br></br>
                 <p>Too much fat in the blood can harden your arteries. This is where it becomes a problem.</p>
-                    <img src="https://www.siumed.edu/sites/default/files/u174/shutterstock_77118016.jpg" />
+                    <img src="https://www.siumed.edu/sites/default/files/u174/shutterstock_77118016.jpg" style={{height: "400px"}} />
             <h2>Best ways to manage Hyperlipidemia: </h2>
                     
                             <li>Lose weight.</li>
