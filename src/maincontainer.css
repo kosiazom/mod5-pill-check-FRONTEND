@@ -2,11 +2,13 @@
  margin-bottom: 120px;
  margin-left: 100px;
  background-color: #e0d5db;
- height: 1900px;    
+ height: 3200px;    
 }
 
 .welcome-user {
     text-align: center;
-    height: 10%;
-    margin-left: 100px
+    height: 70px;
+    margin-left: 100px;
+    font-weight: bold;
+
 }

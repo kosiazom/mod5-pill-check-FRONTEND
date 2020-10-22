@@ -10,8 +10,8 @@ const NotesDetails = (props) => {
 
     return (
     
-            <Card>
-                <Card.Content>
+            <Card className="note-card">
+                <Card.Content className="note-card">
                     <Card.Header>{props.noteObj.title}</Card.Header>
                     <Card.Meta>{props.noteObj.date}</Card.Meta>
                     <Card.Description>

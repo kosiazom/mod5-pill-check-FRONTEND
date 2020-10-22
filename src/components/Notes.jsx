@@ -136,15 +136,15 @@ const addNoteForm = () => {
 
 
        <br/>
-       <h1 className="hover-title" onClick={(e) => revealNotes(e)}>View My Notes</h1>
+       <h1 className="hover-title">View My Notes</h1>
 
-        {showNotes ?
+        
         <div className="ui four cards">
          {myNotes.map(noteObj => <NotesDetails 
                                   noteObj={noteObj} 
                                   deleteMyNote={deleteMyNote} 
                                   editNote={editNote} />)}
-     </div> : null}
+     </div> 
 
         </div> );
 }

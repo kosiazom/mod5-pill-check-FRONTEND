@@ -73,7 +73,7 @@
   /* display: flex;
   margin: -.875em -.5em;
   flex-wrap: wrap; */
-  height: 100%;
+  height: 60%;
 }
 .home-picture {
   background-image: url("images/pillNotes.png");
@@ -122,16 +122,19 @@
 }
 div.ui.input {
   justify-content: center;
- 
 }
-/* 
-.ui.card>.content, .ui.cards>.card>.content {
-  background : yellow;
+
+p, li {
+  font-size: 20px;
+}
+
+.ui.card>.content, .ui.cards>.card>.content.note-card{
+
   font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: 20px;
   font-weight: bolder;
   color: black;
-} */
+} 
 body {
   height: -500px;
 
