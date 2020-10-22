@@ -79,9 +79,11 @@ class QuestionnaireForm extends Component {
     render() {
         return (
             <div className="background-picture">
-                <h1>Hello, {this.state.currentUser} Welcome to PillCheck!!</h1>
-                <h3>Please Fill Out the Form below</h3>
-                <h3>Disease State Form</h3>
+                <div className="questionnare">
+                <h1>Hello, {localStorage.username} Welcome to PillNotes!!</h1>
+                <h3>Please Fill Out the Form</h3>
+                
+                </div>
                 <Form onSubmit={(e) => {
                     this.handleSubmitForm(e)
                     this.handleRedirect(e)}}>

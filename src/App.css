@@ -105,6 +105,7 @@
   border-radius: 10px; 
   background-color: #b4b5a6;
   justify-content: center;
+  text-align: center;
 }
 .semantic-button {
   background-color: whitesmoke;
@@ -185,7 +186,19 @@ p, li {
   will-change: '';
   -webkit-tap-highlight-color: transparent;
 }
+.questionnare {
+  text-align: center;
+  margin-left: 1500px;
+  justify-content: right;
+}
 
+.question-column {
+  font-size: 2.5rem;
+}
+
+.disease-radio {
+  font-size: 1.5rem;
+}
 body {
   height: -500px;
   line-height: 2.4285em
