@@ -113,6 +113,10 @@
   width: 70%;
 }
 
+.hover-title:hover{
+  cursor: pointer;
+}
+
 .ui.input>input {
  max-width: 50%;
 }

@@ -98,7 +98,7 @@ const addNoteForm = () => {
 
     return (
          <div>
-           <h1 onClick={(e) => addNoteForm(e)}>Add A Note</h1> 
+           <h1 className="hover-title" onClick={(e) => addNoteForm(e)}>Add A Note</h1> 
 
       {addNote ? 
        <Form onSubmit={(e) => createNote(e)}>
@@ -136,7 +136,7 @@ const addNoteForm = () => {
 
 
        <br/>
-       <h1 className="hover" onClick={(e) => revealNotes(e)}>View My Notes</h1>
+       <h1 className="hover-title" onClick={(e) => revealNotes(e)}>View My Notes</h1>
 
         {showNotes ?
         <div className="ui four cards">
