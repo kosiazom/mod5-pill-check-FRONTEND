@@ -100,7 +100,7 @@ const addNoteForm = () => {
          <div>
            <h1 className="hover-title" onClick={(e) => addNoteForm(e)}>Add A Note</h1> 
 
-      {addNote ? 
+     
        <Form onSubmit={(e) => createNote(e)}>
         <div><h4>Select Date</h4></div>
         <DatePicker
@@ -132,7 +132,7 @@ const addNoteForm = () => {
          onChange={e => setDescription(e.target.value)}
          />
          <Button>Add My Note</Button>
-       </Form> : null}
+       </Form> 
 
 
        <br/>
@@ -140,6 +140,7 @@ const addNoteForm = () => {
 
         
         <div className="ui four cards">
+          
          {myNotes.map(noteObj => <NotesDetails 
                                   noteObj={noteObj} 
                                   deleteMyNote={deleteMyNote} 

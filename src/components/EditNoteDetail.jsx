@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Form, Input, TextArea, Button} from 'semantic-ui-react';
+import {Form, Input, Header, TextArea, Button} from 'semantic-ui-react';
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
 
@@ -19,7 +19,8 @@ const handleClick = () =>{
 }
 
     return (
-        <div>
+        <div className="edit-note">
+            <Header>Edit My Note</Header>
             <Form onSubmit={(e) =>{
                 handleClick()
                 props.editNote(e, id)}}>
@@ -46,8 +47,8 @@ const handleClick = () =>{
          onChange={(e) => setTitle(e.target.value)}
          /> 
 
-        <Form.TextArea
-        //  control={TextArea}
+        <Form.Input
+         control={TextArea}
          label="Description"
          name="description"
          value={description}

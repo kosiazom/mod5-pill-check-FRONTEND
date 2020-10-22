@@ -139,8 +139,54 @@ p, li {
   font-weight: bolder;
   color: black;
 } 
+
+.edit-note{
+  height: 3200px
+}
+.ui.header{
+  justify-content: center;
+    text-align: center;
+    font-size: 3.2em;
+}
+
+.ui.form .field {
+  clear: both;
+  margin: 0 0 1em;
+  text-align: center;
+}
+
+.ui.button {
+  
+  cursor: pointer;
+  display: inline-block;
+  min-height: 1em;
+  outline: 0;
+  border: none;
+  vertical-align: baseline;
+  background: #d4d4d5 none;
+  color: rgba(0,0,0,.95);
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  margin: 14px .25em 3px 0;
+  padding: .78571429em 1.5em .78571429em;
+  text-transform: none;
+  text-shadow: none;
+  font-weight: 700;
+  line-height: 1em;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  border-radius: .28571429rem;
+  box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
+  will-change: '';
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   height: -500px;
+  line-height: 2.4285em
 
 }
 
