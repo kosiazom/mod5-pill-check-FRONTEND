@@ -88,17 +88,17 @@ const deleteMyNote = (note) => {
   .then(setMyNotes(myNotes.filter(currentNotes => currentNotes !== note)))
 }
 
-const revealNotes = () => {
-  setshowNotes(true)
-}
+// const revealNotes = () => {
+//   setshowNotes(true)
+// }
   
-const addNoteForm = () => {
-  setaddNote(true)
-}
+// const addNoteForm = () => {
+//   setaddNote(true)
+// }
 
     return (
          <div>
-           <h1 className="hover-title" onClick={(e) => addNoteForm(e)}>Add A Note</h1> 
+           <h1 className="hover-title">Add A Note</h1> 
 
      
        <Form onSubmit={(e) => createNote(e)}>
