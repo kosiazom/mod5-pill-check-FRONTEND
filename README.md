@@ -9,7 +9,7 @@ PillNotes:memo:  is a web-application that allows patients/users to do to take c
 [Rails Backend](https://github.com/kosiazom/mod5-pill-check-backend)
 
 # DEMO
-:video_camera:[Full Demo](https://www.youtube.com/watch?v=qBUy_im9n1o&lc=UgwrtR4ZEFKIM_-kUiV4AaABAg)
+:video_camera: [Full Demo](https://www.youtube.com/watch?v=qBUy_im9n1o&lc=UgwrtR4ZEFKIM_-kUiV4AaABAg)
 
 ## Install
 
