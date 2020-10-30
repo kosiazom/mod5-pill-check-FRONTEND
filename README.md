@@ -1,11 +1,29 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
-Welcome to PillNotes!
+# PillNotes :pill:
 
-Hello My name is Kosi and this is my Final Project. 
-Prior to starting Flatiron I was a pharmacist working with the elderly population and part of my job or the main thing I did was medication therapy management where 
 
-I would essentially review patients medication and most of the time the patients weren’t aware of why they were taking a particular medication. So I wanted to create something that will allow users especially the elderly to take control of their meds and help them understand their chronic condition. Not just that but to partner with their practitioner to achieve maximal outcomes. So welcome to Pill Notes. Pill Notes is a web application built with a Ruby on Rails backend and a React Front end.
+PillNotes:memo:  is a web-application that allows patients/users to do to take control of their health but understanding their disease states and medications.
 
-Some stretch Features I am looking to add in the future is a pharmacy locator so users can find pharmacies near them. 
+## Backend
+[Rails Backend](https://github.com/kosiazom/mod5-pill-check-backend)
+
+# DEMO
+:video_camera:[Full Demo](https://www.youtube.com/watch?v=qBUy_im9n1o&lc=UgwrtR4ZEFKIM_-kUiV4AaABAg)
+
+## Install
+
+`npm install OR yarn`
+
+## Usage
+
+`npm start OR yarn start`
+
+## Author
+###### Kosi Akporji 🖐🏿
+ - [Blog](https://medium.com/@kosiazom)
+ - [Github](https://github.com/kosiazom)
+ - [LinkedIn](https://www.linkedin.com/in/kosi-akporji/)
+
+## :copyright: License :heavy_check_mark:
+Copyright ©2020 [Kosi Akporji](https://github.com/kosiazom)
